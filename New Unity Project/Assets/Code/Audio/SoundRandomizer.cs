@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SoundRandomizer : MonoBehaviour {
 
+	public bool playOnEnable = true;
 	public bool useRandomClip;
 	public AudioClip[] audioClips;
 	public float volumeMultiplier;
@@ -16,6 +17,14 @@ public class SoundRandomizer : MonoBehaviour {
 	}
 
 	void OnEnable () {
+		if(playOnEnable)
+		{
+			Randomize();
+		}
+	}
+
+	public void Randomize()
+	{
 		if(useRandomClip)
 		{
 			audioSrc.clip = audioClips[Random.Range(0, audioClips.Length)];

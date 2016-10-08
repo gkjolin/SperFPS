@@ -22,19 +22,19 @@ public class WeaponModuleCannon : MonoBehaviour {
 			{
 				if(cannons.Length == 1)
 				{
-					shootSoundPool = ObjectPoolManager.instance.GunShotx1AU;
+					shootSoundPool = ObjectPoolManager.instance.GunShotx1_AS;
 				}
 				else if(cannons.Length == 2)
 				{
-					shootSoundPool = ObjectPoolManager.instance.GunShotx2AU;
+					shootSoundPool = ObjectPoolManager.instance.GunShotx2_AS;
 				}
 				else if(cannons.Length == 3)
 				{
-					shootSoundPool = ObjectPoolManager.instance.GunShotx3AU;
+					shootSoundPool = ObjectPoolManager.instance.GunShotx3_AS;
 				}
 				else if(cannons.Length == 4)
 				{
-					shootSoundPool = ObjectPoolManager.instance.GunShotx4AU;
+					shootSoundPool = ObjectPoolManager.instance.GunShotx4_AS;
 				}
 
 				break;

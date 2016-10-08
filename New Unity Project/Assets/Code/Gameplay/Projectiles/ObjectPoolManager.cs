@@ -26,19 +26,19 @@ public class ObjectPoolManager : MonoBehaviour {
 	public ObjectPool sphereBot_LVL0_Death;
 
 	[Space(20)]
-	public ObjectPool Drop01AU;
-	public ObjectPool GunReload01AU;
-	public ObjectPool GunReload02AU;
-	public ObjectPool GunReload03AU;
-	public ObjectPool GunReload04AU;
-	public ObjectPool GunGrab01AU;
-	public ObjectPool GunGrab02AU;
-	public ObjectPool GunGrab03AU;
-	public ObjectPool GunGrab04AU;
-	public ObjectPool GunShotx1AU;
-	public ObjectPool GunShotx2AU;
-	public ObjectPool GunShotx3AU;
-	public ObjectPool GunShotx4AU;
+	public ObjectPool Drop01_AS;
+	public ObjectPool GunReload01_AS;
+	public ObjectPool GunReload02_AS;
+	public ObjectPool GunReload03_AS;
+	public ObjectPool GunReload04_AS;
+	public ObjectPool GunGrab01_AS;
+	public ObjectPool GunGrab02_AS;
+	public ObjectPool GunGrab03_AS;
+	public ObjectPool GunGrab04_AS;
+	public ObjectPool GunShotx1_AS;
+	public ObjectPool GunShotx2_AS;
+	public ObjectPool GunShotx3_AS;
+	public ObjectPool GunShotx4_AS;
 
 	void Awake () {
 		instance = this;

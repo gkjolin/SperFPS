@@ -57,19 +57,19 @@ public class WeaponModuleMagazine : MonoBehaviour {
 			{
 				if(data.moduleLevel == 0)
 				{
-					reloadSoundPool = ObjectPoolManager.instance.GunReload01AU;
+					reloadSoundPool = ObjectPoolManager.instance.GunReload01_AS;
 				}
 				else if(data.moduleLevel == 1)
 				{
-					reloadSoundPool = ObjectPoolManager.instance.GunReload02AU;
+					reloadSoundPool = ObjectPoolManager.instance.GunReload02_AS;
 				}
 				else if(data.moduleLevel == 2)
 				{
-					reloadSoundPool = ObjectPoolManager.instance.GunReload03AU;
+					reloadSoundPool = ObjectPoolManager.instance.GunReload03_AS;
 				}
 				else if(data.moduleLevel == 3)
 				{
-					reloadSoundPool = ObjectPoolManager.instance.GunReload04AU;
+					reloadSoundPool = ObjectPoolManager.instance.GunReload04_AS;
 				}
 
 				break;

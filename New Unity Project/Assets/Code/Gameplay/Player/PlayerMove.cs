@@ -19,12 +19,13 @@ public class PlayerMove : MonoBehaviour {
 	public bool stuned;
 	[HideInInspector]
 	public Rigidbody rgdBody;
+	[HideInInspector]
+	public bool jumping;
 
 	private Vector3 moveDirection = new Vector3(0.0f,0.0f,0.0f);
 	private float jump;
 	private CheckGround checkGround;
 	private float equipmentWeight;
-	private bool jumping;
 
 	void Awake () {
 		rgdBody = GetComponent<Rigidbody>();

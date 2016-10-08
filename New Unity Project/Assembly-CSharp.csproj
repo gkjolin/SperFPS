@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Code\Audio\PlayerSound.cs" />
      <Compile Include="Assets\Code\Audio\SoundObjectDeactivation.cs" />
      <Compile Include="Assets\Code\Audio\SoundRandomizer.cs" />
      <Compile Include="Assets\Code\Effects\CameraShake.cs" />
