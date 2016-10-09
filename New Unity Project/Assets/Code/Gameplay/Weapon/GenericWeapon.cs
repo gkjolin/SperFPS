@@ -132,7 +132,7 @@ public class GenericWeapon : GenericItem {
 
 			while(value < rafaleRate)
 				{
-					float ev = weaponModuleBase.data.weaponFireCurve.Evaluate(value/rafaleRate);
+					float ev = weaponModuleBase.data.weaponFireCurve.Evaluate(value/rafaleRate)*rafaleRate;
 					if(rightHand)
 					{
 						trsf.localPosition = ev*weaponModuleBase.data.weaponRecoilPosition;

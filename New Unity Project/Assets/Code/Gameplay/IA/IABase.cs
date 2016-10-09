@@ -310,7 +310,7 @@ public class IABase : MonoBehaviour {
 		dying = true;
 		SetUpComponents(false);
 		iaActions = IAActions.wait;
-		float force = data.pushBack*damageable.pushBack*data.deathForceMultiplier;
+		float force = damageable.pushBack*data.deathPushBack;
 		rgdBody.AddForceAtPosition(damageable.damageDirection*force, damageable.damagePosition, ForceMode.VelocityChange);
 		rgdBody.AddTorque(Vector3.Cross(damageable.damageDirection + Random.insideUnitSphere, Vector3.up)*-force, ForceMode.VelocityChange);
 

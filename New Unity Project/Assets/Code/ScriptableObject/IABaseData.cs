@@ -21,6 +21,6 @@ public class IABaseData : ScriptableObject {
 	public float pushBack;
 	public AnimationCurve pushCurve;
 	public float deathDuration;
-	public float deathForceMultiplier;
+	public float deathPushBack;
 
 }

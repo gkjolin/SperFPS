@@ -1,9 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Gameplay\Weapon\HandMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Audio\PlayerSound.cs">
     <Files>
-      <File FileName="Assets\Code\Audio\PlayerSound.cs" Line="24" Column="29" />
-      <File FileName="Assets\Code\Gameplay\Weapon\HandMovement.cs" Line="27" Column="1" />
+      <File FileName="Assets\Code\Audio\PlayerSound.cs" Line="56" Column="29" />
+      <File FileName="Assets\Code\Gameplay\Weapon\HandMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\Gameplay\Weapon\GenericWeapon.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\Gameplay\IA\IABase.cs" Line="315" Column="50" />
+      <File FileName="Assets\Code\ScriptableObject\IABaseData.cs" Line="24" Column="28" />
+      <File FileName="Assets\Code\Gameplay\Player\PlayerMove.cs" Line="27" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
