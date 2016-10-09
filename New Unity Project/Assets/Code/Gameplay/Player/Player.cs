@@ -6,6 +6,7 @@ public class Player : MonoBehaviour {
 	public int playerID;
 	public float stunDuration;
 	public float deathForce;
+	public float hitWhileJumpingForce;
 	public AnimationCurve stunCurve;
 	public Transform respawnPoint;
 	public Transform head;
@@ -15,6 +16,7 @@ public class Player : MonoBehaviour {
 	public IATarget iaTarget;
 	public WeaponInput[] weaponInputs;
 	public MouseLook mouseLook;
+	public PostProcess postProcess;
 	public Collider coll;
 
 
@@ -61,10 +63,21 @@ public class Player : MonoBehaviour {
 			if(damageable.stuning*stunDuration > 0.0f)
 			{
 				StopAllCoroutines();
-				StartCoroutine(StunCoroutine(damageable.pushBack, damageable.stuning, damageable.damageDirection));
+				if(playerMove.checkGround.grounded == true)
+				{
+					StartCoroutine(StunCoroutine(damageable.pushBack, damageable.stuning, damageable.damageDirection));
+				}
+				else
+				{
+					rgdBody.AddForce(damageable.pushBack*damageable.damageDirection*hitWhileJumpingForce, ForceMode.VelocityChange);
+				}
 			}
 			damageable.takeDamage = false;
 			UIManager.instance.UpdateLife();
+
+			postProcess.StopAllCoroutines();
+			postProcess.hitPosition = damageable.damagePosition;
+			postProcess.StartCoroutine("HitEffect");
 		}
 	}
 

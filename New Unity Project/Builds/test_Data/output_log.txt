@@ -6,25 +6,25 @@ Direct3D:
     Vendor:   Intel
     VRAM:     912 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: D:\travail\Unity\Pixel\Pixel\New Unity Project\Builds\test_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading D:\travail\Unity\Pixel\Pixel\New Unity Project\Builds\test_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: D:\travail\Unity\Pixel\Pixel\New Unity Project\Builds\test_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading D:\travail\Unity\Pixel\Pixel\New Unity Project\Builds\test_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: D:\travail\Unity\Pixel\Pixel\New Unity Project\Builds\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading D:\travail\Unity\Pixel\Pixel\New Unity Project\Builds\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: D:\travail\Unity\Pixel\Pixel\New Unity Project\Builds\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading D:\travail\Unity\Pixel\Pixel\New Unity Project\Builds\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: D:\travail\Unity\Pixel\Pixel\New Unity Project\Builds\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading D:\travail\Unity\Pixel\Pixel\New Unity Project\Builds\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.049 seconds
-Platform assembly: D:\travail\Unity\Pixel\Pixel\New Unity Project\Builds\test_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: D:\travail\Unity\Pixel\Pixel\New Unity Project\Builds\test_Data\Managed\System.dll (this message is harmless)
+Platform assembly: D:\travail\Unity\Pixel\SperFPS\New Unity Project\Builds\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\travail\Unity\Pixel\SperFPS\New Unity Project\Builds\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\travail\Unity\Pixel\SperFPS\New Unity Project\Builds\test_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading D:\travail\Unity\Pixel\SperFPS\New Unity Project\Builds\test_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: D:\travail\Unity\Pixel\SperFPS\New Unity Project\Builds\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\travail\Unity\Pixel\SperFPS\New Unity Project\Builds\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\travail\Unity\Pixel\SperFPS\New Unity Project\Builds\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\travail\Unity\Pixel\SperFPS\New Unity Project\Builds\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\travail\Unity\Pixel\SperFPS\New Unity Project\Builds\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\travail\Unity\Pixel\SperFPS\New Unity Project\Builds\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.048 seconds
+Platform assembly: D:\travail\Unity\Pixel\SperFPS\New Unity Project\Builds\test_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\travail\Unity\Pixel\SperFPS\New Unity Project\Builds\test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.863821 ms
-2.6
+UnloadTime: 0.833029 ms
+1.5
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
@@ -32,7 +32,7 @@ ready!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-2.4
+0.1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
@@ -40,7 +40,7 @@ ready!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-10.6
+3.1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
@@ -48,7 +48,15 @@ ready!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-0.2
+1.8
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+ready!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+0.1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
@@ -57,5 +65,5 @@ ready!
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1da4 -> priority: 1 
-  Thread -> id: 1f5c -> priority: 1 
+  Thread -> id: 5a4 -> priority: 1 
+  Thread -> id: 1c58 -> priority: 1 

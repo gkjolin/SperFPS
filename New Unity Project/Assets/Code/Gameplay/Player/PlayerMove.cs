@@ -21,10 +21,11 @@ public class PlayerMove : MonoBehaviour {
 	public Rigidbody rgdBody;
 	[HideInInspector]
 	public bool jumping;
+	[HideInInspector]
+	public CheckGround checkGround;
 
 	private Vector3 moveDirection = new Vector3(0.0f,0.0f,0.0f);
 	private float jump;
-	private CheckGround checkGround;
 	private float equipmentWeight;
 
 	void Awake () {

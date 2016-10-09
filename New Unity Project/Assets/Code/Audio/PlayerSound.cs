@@ -56,7 +56,7 @@ public class PlayerSound : MonoBehaviour {
 			playingLandSound = false;
 		}
 
-		float v = rgdBody.velocity.magnitude;
+		float v = Mathf.Clamp(rgdBody.velocity.magnitude, 0.0f, 10.0f);
 		movingSound.volume = movingSoundVolume*v;
 		movingSound.pitch = movingSoundPitch*v;
 	}
