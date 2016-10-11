@@ -10,10 +10,15 @@ public class PostProcess : MonoBehaviour
 	public Color hitColor;
 	public float hitDuration;
 	public float hitRadius;
+	public float hitDistortion;
 	public AnimationCurve hitEffectCurve;
+	public AnimationCurve hitAlphaCurve;
+	public Texture2D noise;
+	public Vector4 noiseParams;
 	public bool pixelate;
 	public int downsample;
 	public Shader shader = null;
+	public bool updateMaterial;
 
 	[HideInInspector]
 	public Vector3 hitPosition;
@@ -53,14 +58,28 @@ public class PostProcess : MonoBehaviour
 			return;
 		}
 
+		SetMaterial();
 		material.SetFloat("_HitRadius", 0.0f);
-		material.SetColor("_HitColor", new Color(0.0f, 0.0f, 0.0f, 0.0f));
 	}
 
-	void OnRenderImage (RenderTexture source, RenderTexture destination) {
-
+	void SetMaterial()
+	{
+		ReconstructCamera();
+		material.SetFloat("_HitRadius", hitRadius);
+		material.SetColor("_HitColor", hitColor);
+		material.SetFloat("_HitDist", hitDistortion);
 		material.SetFloat("_VignetSize", vignetSize);
 		material.SetColor("_VignetColor", vignetColor);
+		material.SetTexture("_Noise", noise);
+		material.SetVector("_NoiseParams", noiseParams);
+	}
+
+	void OnRenderImage (RenderTexture source, RenderTexture destination) 
+	{
+		if(updateMaterial)
+		{
+			SetMaterial();
+		}
 
 		if(pixelate)
 		{
@@ -131,9 +150,10 @@ public class PostProcess : MonoBehaviour
 		while(value < hitDuration)
 		{
 			ReconstructCamera();
-			float ev = hitEffectCurve.Evaluate(value);
+			float ev = hitEffectCurve.Evaluate(value/hitDuration);
+			float eva = hitAlphaCurve.Evaluate(value/hitDuration);
 			material.SetFloat("_HitRadius", ev*hitRadius);
-			material.SetColor("_HitColor", new Color(hitColor.r, hitColor.b, hitColor.b, ev));
+			material.SetColor("_HitColor", new Color(hitColor.r, hitColor.b, hitColor.b, eva));
 			value += Time.deltaTime;
 			yield return wait;
 		}

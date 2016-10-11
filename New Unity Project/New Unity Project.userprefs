@@ -1,9 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Gameplay\Player\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Shader\PostProcess.shader">
     <Files>
-      <File FileName="Assets\Code\Gameplay\Player\Player.cs" Line="72" Column="90" />
-      <File FileName="Assets\Code\Gameplay\Player\PlayerMove.cs" Line="25" Column="33" />
+      <File FileName="Assets\Code\Shader\PostProcess.shader" Line="66" Column="148" />
+      <File FileName="Assets\Code\Effects\PostProcess.cs" Line="70" Column="46" />
+      <File FileName="Assets\Code\Gameplay\Projectiles\ProjectilePlayer.cs" Line="15" Column="1" />
+      <File FileName="Assets\Code\Gameplay\Weapon\GenericWeapon.cs" Line="100" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

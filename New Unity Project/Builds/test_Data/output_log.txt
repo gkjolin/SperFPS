@@ -16,15 +16,15 @@ Platform assembly: D:\travail\Unity\Pixel\SperFPS\New Unity Project\Builds\test_
 Loading D:\travail\Unity\Pixel\SperFPS\New Unity Project\Builds\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: D:\travail\Unity\Pixel\SperFPS\New Unity Project\Builds\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading D:\travail\Unity\Pixel\SperFPS\New Unity Project\Builds\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.048 seconds
+- Completed reload, in  0.049 seconds
 Platform assembly: D:\travail\Unity\Pixel\SperFPS\New Unity Project\Builds\test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\travail\Unity\Pixel\SperFPS\New Unity Project\Builds\test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.833029 ms
-1.5
+UnloadTime: 0.850136 ms
+0.8
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
@@ -32,31 +32,7 @@ ready!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
-0.1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-ready!
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-3.1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-ready!
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-1.8
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-ready!
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-0.1
+0.8
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
@@ -65,5 +41,5 @@ ready!
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 5a4 -> priority: 1 
-  Thread -> id: 1c58 -> priority: 1 
+  Thread -> id: 1cfc -> priority: 1 
+  Thread -> id: 1250 -> priority: 1 

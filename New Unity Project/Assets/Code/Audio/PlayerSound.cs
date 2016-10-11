@@ -10,7 +10,6 @@ public class PlayerSound : MonoBehaviour {
 	public AudioSource movingSound;
 	public Rigidbody rgdBody;
 	public PlayerMove playerMove;
-	public CheckGround checkGround;
 	public float movingSoundVolume;
 	public float movingSoundPitch;
 	public float stepFrequency;
@@ -44,14 +43,14 @@ public class PlayerSound : MonoBehaviour {
 			StartCoroutine(jumpSoundCoroutine());
 		}
 
-		if(checkGround.grounded == true && playingLandSound == false)
+		if(playerMove.checkGround.grounded == true && playingLandSound == false)
 		{
 			playingLandSound = true;
 			landSoundRandomizer.Randomize();
 			landSound.Play();
 		}
 
-		if(checkGround.grounded == false)
+		if(playerMove.checkGround.grounded == false)
 		{
 			playingLandSound = false;
 		}
