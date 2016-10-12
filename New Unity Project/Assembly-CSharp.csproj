@@ -86,6 +86,7 @@
      <Compile Include="Assets\Code\ScriptableObject\IABaseData.cs" />
      <Compile Include="Assets\Code\ScriptableObject\IAEyeData.cs" />
      <Compile Include="Assets\Code\ScriptableObject\IAWeaponData.cs" />
+     <Compile Include="Assets\Code\ScriptableObject\ProjectileData.cs" />
      <Compile Include="Assets\Code\ScriptableObject\ThrowingDamageData.cs" />
      <Compile Include="Assets\Code\ScriptableObject\WeaponGeneratorData.cs" />
      <Compile Include="Assets\Code\ScriptableObject\WeaponModuleBaseData.cs" />

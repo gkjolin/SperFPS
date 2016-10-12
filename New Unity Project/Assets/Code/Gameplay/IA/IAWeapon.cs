@@ -46,7 +46,7 @@ public class IAWeapon : MonoBehaviour {
 
 	void Update()
 	{
-		if(projectileMovment.maxRange*projectileMovment.maxRange > distanceFromPlayer)
+		if(projectileMovment.data.maxRange*projectileMovment.data.maxRange > distanceFromPlayer)
 		{
 			inRange = true;
 		}
@@ -70,7 +70,7 @@ public class IAWeapon : MonoBehaviour {
 
 		Ray ray = new Ray(trsf.TransformPoint(averageCannonPosition), trsf.forward);
 
-		if(Physics.Raycast(ray, projectileMovment.maxRange, data.friendlyLayer))
+		if(Physics.Raycast(ray, projectileMovment.data.maxRange, data.friendlyLayer))
 		{
 			used = false;
 			yield return new WaitForSeconds(Random.Range(data.attackFrequency.x, data.attackFrequency.y));

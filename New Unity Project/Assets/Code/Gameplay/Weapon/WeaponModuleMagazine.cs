@@ -20,7 +20,7 @@ public class WeaponModuleMagazine : MonoBehaviour {
 	{
 		SetUpProjectile();
 		SetUpSound();
-		recoilForce = projectilsPool.pooledObject.GetComponent<ProjectilePlayer>().recoilForce;
+		recoilForce = projectilsPool.pooledObject.GetComponent<ProjectilePlayer>().data.recoilForce;
 		currentMagazine = data.magazine;
 	}
 

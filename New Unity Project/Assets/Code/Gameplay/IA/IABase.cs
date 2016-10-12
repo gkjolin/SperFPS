@@ -301,11 +301,11 @@ public class IABase : MonoBehaviour {
 		if(dying == false)
 		{
 			StopAllCoroutines();
-			StartCoroutine(DeathCotroutine());
+			StartCoroutine(DeathCoroutine());
 		}
 	}
 
-	IEnumerator DeathCotroutine()
+	IEnumerator DeathCoroutine()
 	{
 		dying = true;
 		SetUpComponents(false);
@@ -328,13 +328,6 @@ public class IABase : MonoBehaviour {
 		}
 
 		yield return new WaitForSeconds(data.deathDuration);
-//		WaitForEndOfFrame wait = new WaitForEndOfFrame();
-//		float value = 0.0f;
-//		while(value < deathDuration)
-//		{
-//			value += Time.deltaTime;
-//			yield return wait;
-//		}
 
 		ParticleDeactivation[] p = GetComponentsInChildren<ParticleDeactivation>();
 		for(int i = 0; i < p.Length; i++)

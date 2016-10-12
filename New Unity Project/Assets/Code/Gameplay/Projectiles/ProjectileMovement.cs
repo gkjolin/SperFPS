@@ -3,23 +3,7 @@ using System.Collections;
 
 public class ProjectileMovement : MonoBehaviour {
 
-	public float speed;
-	public float maxRange;
-	public bool impact;
-	public float impactForce;
-	public int damages;
-	public float stun;
-	public float gravity;
-	public int bounces;
-	public int piercing;
-	public bool expolsive;
-	public int explosiveDamages;
-	public float explosiveRange;
-	public int explosiveForce;
-	public float explosiveStun;
-	public bool projectileStickToTarget;
-	public string[] hitLayer;
-	public string[] damageLayer;
+	public ProjectileData data;
 
 	protected Transform trsf;
 	protected Rigidbody rgdBody;
@@ -44,8 +28,8 @@ public class ProjectileMovement : MonoBehaviour {
 	{
 		initialForce = true;
 		bounce = false;
-		bounceCount = bounces;
-		piercingCount = piercing;
+		bounceCount = data.bounces;
+		piercingCount = data.piercing;
 		StartCoroutine(DisableAfterDelay());
 	}
 
@@ -54,10 +38,10 @@ public class ProjectileMovement : MonoBehaviour {
 		if(initialForce == true)
 		{
 			initialForce = false;
-			rgdBody.AddForce(trsf.forward*speed, ForceMode.VelocityChange);
+			rgdBody.AddForce(trsf.forward*data.speed, ForceMode.VelocityChange);
 		}
 
-		rgdBody.AddForce(Vector3.up*gravity, ForceMode.Acceleration);
+		rgdBody.AddForce(Vector3.up*data.gravity, ForceMode.Acceleration);
 
 		if(rgdBody.velocity != Vector3.zero)
 		{
@@ -78,18 +62,16 @@ public class ProjectileMovement : MonoBehaviour {
 			ray = new Ray(rgdBody.position, trsf.forward);
 		}
 
-		Debug.DrawRay(ray.origin, ray.direction*speed*Time.fixedDeltaTime);
+		//Debug.DrawRay(ray.origin, trsf.forward*data.speed*Time.fixedDeltaTime);
 			
 		CheckColision(ray);
 	}
 
 	void CheckColision(Ray r)
 	{
-		LayerMask layer = LayerMask.GetMask(hitLayer);
-		if (Physics.Raycast(r, out hit, speed*Time.fixedDeltaTime, layer))
+		if (Physics.Raycast(r, out hit, data.speed*Time.fixedDeltaTime, data.hitLayer))
 		{
 			GameObject impactFx = impactStandardPool.GetCurrentPooledGameObject();
-			LayerMask dmgLayer = LayerMask.GetMask(damageLayer);
 
 			//STANDARD EFFECTS/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			if(hit.collider.gameObject.layer != 0)
@@ -105,22 +87,22 @@ public class ProjectileMovement : MonoBehaviour {
 				}
 
 				//IMPACT EFFECTS/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-				if(impact && hit.collider.gameObject.transform.parent)
+				if(data.impact && hit.collider.gameObject.transform.parent)
 				{
 					Rigidbody hitRgdBody = hit.collider.gameObject.transform.parent.GetComponent<Rigidbody>();
 					if(hitRgdBody)
 					{
-						hitRgdBody.AddForceAtPosition(trsf.forward*impactForce, hit.point, ForceMode.Impulse);
+						hitRgdBody.AddForceAtPosition(trsf.forward*data.impactForce, hit.point, ForceMode.Impulse);
 					}
 				}
 
 				//DAMAGE EFFECTS/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-				if(dmgLayer == (dmgLayer | (1 << hit.collider.gameObject.layer)))				
+				if(data.damageLayer == (data.damageLayer | (1 << hit.collider.gameObject.layer)))				
 				{
 					Damageable dam = hit.collider.gameObject.GetComponent<Damageable>();
 					if(dam)
 					{
-						dam.TakeDamage(damages, impactForce, stun, trsf.forward, hit.point);
+						dam.TakeDamage(data.damages, data.impactForce, data.stun, trsf.forward, hit.point);
 					}
 
 					impactFx = impactHitPool.GetCurrentPooledGameObject();
@@ -141,26 +123,26 @@ public class ProjectileMovement : MonoBehaviour {
 			}
 
 			//EXPLOSIVE DAMAGES/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-			if(expolsive == true)
+			if(data.expolsive == true)
 			{
-				Collider[] hitedColliders = Physics.OverlapSphere(hit.point, explosiveRange, layer);
+				Collider[] hitedColliders = Physics.OverlapSphere(hit.point, data.explosiveRange, data.hitLayer);
 				for(int i = 0; i < hitedColliders.Length; i++)
 				{
 					Transform hitedTransform = hitedColliders[i].transform;
 					Vector3 dir = (hitedTransform.position - trsf.position).normalized;
-					Rigidbody hitRgdBody = hitedColliders[i].gameObject.transform.parent.GetComponent<Rigidbody>();
+					Rigidbody hitRgdBody = hitedColliders[i].gameObject.transform.GetComponent<Rigidbody>();
 
 					if(hitRgdBody)
 					{
-						hitRgdBody.AddForce(dir*explosiveForce, ForceMode.Impulse);
+						hitRgdBody.AddForce(dir*data.explosiveForce, ForceMode.Impulse);
 					}
 
-					if(dmgLayer == (dmgLayer | (1 << hitedColliders[i].gameObject.layer)))
+					if(data.damageLayer == (data.damageLayer | (1 << hitedColliders[i].gameObject.layer)))
 					{
 						Damageable dam = hitedColliders[i].gameObject.GetComponent<Damageable>();
 						if(dam)
 						{
-							dam.TakeDamage(explosiveDamages, explosiveForce, explosiveStun, dir, hitedTransform.position);
+							dam.TakeDamage(data.explosiveDamages, data.explosiveForce, data.explosiveStun, dir, hitedTransform.position);
 						}
 					}
 				}
@@ -175,7 +157,7 @@ public class ProjectileMovement : MonoBehaviour {
 	{
 		if(go)
 		{
-			if(projectileStickToTarget)
+			if(data.projectileStickToTarget)
 			{
 				go.transform.parent = h.collider.transform;
 				go.transform.forward = -trsf.forward;
@@ -201,7 +183,7 @@ public class ProjectileMovement : MonoBehaviour {
 
 	IEnumerator DisableAfterDelay()
 	{
-		yield return new WaitForSeconds(maxRange/speed);
+		yield return new WaitForSeconds(data.maxRange/data.speed);
 		gameObject.SetActive(false);
 	}
 		

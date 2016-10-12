@@ -4,7 +4,6 @@ using System.Collections;
 public class ProjectilePlayer : ProjectileMovement {
 
 	public GameManager.ProjectileType projectileType;
-	public float recoilForce;
 
 	protected override void SetUpImpact()
 	{

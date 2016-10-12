@@ -100,6 +100,10 @@ public class Player : MonoBehaviour {
 		float value = 0.0f;
 		while(value < projStunDuration)
 		{
+			if(playerMove.checkGround.grounded == false)
+			{
+				yield break;
+			}
 			value += Time.deltaTime;
 			float ev = stunCurve.Evaluate(value/projStunDuration);
 			rgdBody.AddForce(projPushBack*dir*ev, ForceMode.VelocityChange);
