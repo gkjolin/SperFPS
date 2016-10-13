@@ -45,13 +45,14 @@ public class WeaponGenerator : MonoBehaviour {
 		Instantiate(weaponModuleCannon.gameObject, bTransform.position, bTransform.rotation, bTransform);
 		Instantiate(weaponModuleMagazine.gameObject, bTransform.position, bTransform.rotation, bTransform);
 
-		float dps = weaponModuleCannon.cannons.Length/((weaponModuleBase.data.rafaleRate*(weaponModuleBase.data.rafaleCount-1.0f) + weaponModuleBase.data.fireRate*(1.0f + (weaponModuleCannon.cannons.Length-1.0f)*0.5f))/weaponModuleBase.data.rafaleCount);
+		GenericWeapon gw = baseObject.GetComponent<GenericWeapon>();
+		gw.SetUpItem();
+
+		float dps = gw.dps;
 
 		baseObject.name = weaponModuleMagazine.data.projectileType.ToString() + " LVL " + weaponLVL 
 						+ "(B" + weaponModuleBase.data.moduleLevel + "C" + weaponModuleCannon.data.moduleLevel + "M" + weaponModuleMagazine.data.moduleLevel
 						+ ") X" + weaponModuleCannon.cannons.Length + " (" + dps.ToString("F1") + "dps)";
-
-		baseObject.GetComponent<GenericWeapon>().SetUpItem();
 	}
 
 	void GetModules(int type, int level)

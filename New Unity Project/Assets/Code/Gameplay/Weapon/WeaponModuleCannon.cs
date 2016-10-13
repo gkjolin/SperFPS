@@ -9,7 +9,7 @@ public class WeaponModuleCannon : MonoBehaviour {
 	[HideInInspector]
 	public ObjectPool shootSoundPool;
 
-	void Awake()
+	public void SetUpItem()
 	{
 		SetUpSound();
 	}

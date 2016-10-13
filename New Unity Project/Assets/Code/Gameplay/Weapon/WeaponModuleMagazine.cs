@@ -16,7 +16,7 @@ public class WeaponModuleMagazine : MonoBehaviour {
 	[HideInInspector]
 	public ObjectPool reloadSoundPool;
 
-	void Awake()
+	public void SetUpItem()
 	{
 		SetUpProjectile();
 		SetUpSound();

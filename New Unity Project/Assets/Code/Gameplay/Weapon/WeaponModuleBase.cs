@@ -10,7 +10,7 @@ public class WeaponModuleBase : MonoBehaviour {
 	[HideInInspector]
 	public ObjectPool grabSoundPool;
 
-	void Awake()
+	public void SetUpItem()
 	{
 		currentRafaleCount = data.rafaleCount;
 		SetUpSound();

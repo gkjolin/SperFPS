@@ -9,6 +9,8 @@ public class GenericWeapon : GenericItem {
 	public WeaponModuleMagazine weaponModuleMagazine;
 	[HideInInspector]
 	public WeaponModuleCannon weaponModuleCannon;
+	[HideInInspector]
+	public float dps;
 
 	private CameraShake cameraShake;
 	private float rate1;
@@ -18,15 +20,38 @@ public class GenericWeapon : GenericItem {
 	{
 		base.SetUpItem();
 		weaponModuleBase = GetComponent<WeaponModuleBase>();
+		weaponModuleBase.SetUpItem();
 		weaponModuleMagazine = GetComponentInChildren<WeaponModuleMagazine>();
+		weaponModuleMagazine.SetUpItem();
 		weaponModuleCannon = GetComponentInChildren<WeaponModuleCannon>();
+		weaponModuleCannon.SetUpItem();
 		cameraShake = GameObject.FindObjectOfType<CameraShake>() as CameraShake;
 		rgdBody.mass = weaponModuleBase.data.mass + weaponModuleMagazine.data.mass + weaponModuleCannon.data.mass * weaponModuleCannon.cannons.Length;
 
 		rate1 = weaponModuleBase.data.rafaleRate*weaponModuleMagazine.data.fireRateLimiter;
-		rate2 = weaponModuleBase.data.fireRate*weaponModuleMagazine.data.fireRateLimiter*(1.0f + (weaponModuleCannon.cannons.Length-1.0f)*0.5f);
+		rate2 = weaponModuleBase.data.fireRate*weaponModuleMagazine.data.fireRateLimiter*(1.0f + (weaponModuleCannon.cannons.Length-1.0f)*weaponModuleCannon.data.multiCannonFireRateLimiter);
+
+		dps = CalculateDps();
 	}
-		
+
+	float CalculateDps()
+	{
+		float rate = (rate1*(weaponModuleBase.data.rafaleCount-1.0f) + rate2)/weaponModuleBase.data.rafaleCount;
+		ProjectileMovement pm = weaponModuleMagazine.projectilsPool.pooledObject.GetComponent<ProjectileMovement>();
+		float dmg;
+		if(pm)
+		{
+			dmg = pm.data.damages;
+		}
+		else
+		{
+			Debug.Log("prout");
+			dmg = 0.0f;
+		}
+
+		return (weaponModuleCannon.cannons.Length*dmg)/rate;
+	}
+
 	public override void Use()
 	{
 		if(used == false)

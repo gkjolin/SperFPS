@@ -11,6 +11,7 @@ public class WeaponModuleCannonData : ScriptableObject {
 
 	public float precision;
 	public float weaponNoise;
+	public float multiCannonFireRateLimiter;
 
 	public float mass;
 
