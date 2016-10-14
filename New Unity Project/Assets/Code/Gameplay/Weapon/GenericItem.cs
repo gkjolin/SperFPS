@@ -66,8 +66,8 @@ public class GenericItem : MonoBehaviour {
 		weaponInput = null;
 		SetPhysics(inHand);
 		trsf.SetParent(null);
-		rgdBody.AddForce(trsf.forward*force);
-		rgdBody.AddTorque(trsf.right*torque);
+		rgdBody.AddForce(trsf.forward*force, ForceMode.VelocityChange);
+		rgdBody.AddTorque(trsf.right*torque, ForceMode.VelocityChange);
 		player.GetItems();
 	}
 
