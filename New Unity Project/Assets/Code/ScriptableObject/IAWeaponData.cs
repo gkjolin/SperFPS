@@ -4,6 +4,8 @@ using System.Collections;
 [CreateAssetMenu(fileName = "IAWeaponData", menuName = "ScriptableObjects/Mobs/IAWeaponData", order = 3)]
 public class IAWeaponData : ScriptableObject {
 
+	public int moduleLevel;
+
 	public GameManager.HostileProjectileType hostileProjectileType;
 
 	public Vector2 attackFrequency;

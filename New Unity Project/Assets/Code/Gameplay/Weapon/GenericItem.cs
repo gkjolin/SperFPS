@@ -19,6 +19,8 @@ public class GenericItem : MonoBehaviour {
 	public bool rightHand;
 	[HideInInspector]
 	public Collider grabCollider;
+	[HideInInspector]
+	public Transform parent;
 
 	protected Transform trsf;
 
@@ -44,6 +46,9 @@ public class GenericItem : MonoBehaviour {
 				break;
 			}
 		}
+
+		parent = GameManager.instance.itemGroup;
+		trsf.SetParent(parent);
 	}
 
 	public virtual void Use()
@@ -65,7 +70,7 @@ public class GenericItem : MonoBehaviour {
 		weaponInput.itemInHand = false;
 		weaponInput = null;
 		SetPhysics(inHand);
-		trsf.SetParent(null);
+		trsf.SetParent(parent);
 		rgdBody.AddForce(trsf.forward*force, ForceMode.VelocityChange);
 		rgdBody.AddTorque(trsf.right*torque, ForceMode.VelocityChange);
 		player.GetItems();

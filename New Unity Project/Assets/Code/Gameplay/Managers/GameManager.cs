@@ -4,6 +4,8 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 
 	public Player[] players;
+	public Transform itemGroup;
+	public Transform mobsGroup;
 
 	public enum ProjectileType
 	{

@@ -3,7 +3,7 @@ using System.Collections;
 
 [CreateAssetMenu(fileName = "WeaponModuleBaseData", menuName = "ScriptableObjects/Weapons/WeaponModuleBaseData", order = 3)]
 public class WeaponModuleBaseData : ScriptableObject {
-	public int moduleSize;
+
 	public int moduleLevel;
 
 	public GameManager.ProjectileType projectileType;

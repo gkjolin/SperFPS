@@ -13,6 +13,8 @@ public class IABase : MonoBehaviour {
 	}
 			
 	public IABaseData data;
+	public Transform[] eyeSlots;
+	public Transform[] weaponsSlots;
 
 	[HideInInspector]
 	public IATarget target;
@@ -41,7 +43,7 @@ public class IABase : MonoBehaviour {
 	void Awake () {
 		players = GameManager.instance.players;
 		trsf = transform;
-
+		trsf.SetParent(GameManager.instance.mobsGroup);
 		eyes = GetComponentsInChildren<IAEye>();
 		if(eyes.Length == 0)
 		{
@@ -55,7 +57,6 @@ public class IABase : MonoBehaviour {
 				eyes[i].iaBase = this;
 			}
 		}
-
 		target = players[0].iaTarget;
 		iaMovement = GetComponent<IAMovement>();
 		damageable = GetComponentInChildren<Damageable>();
@@ -355,7 +356,6 @@ public class IABase : MonoBehaviour {
 		shoot = false;
 		dying = false;
 		stuned = false;
-		StopAllCoroutines();
 		SetUpComponents(true);
 	}
 

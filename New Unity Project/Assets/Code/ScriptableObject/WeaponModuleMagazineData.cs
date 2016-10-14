@@ -4,7 +4,6 @@ using System.Collections;
 [CreateAssetMenu(fileName = "WeaponModuleMagazineData", menuName = "ScriptableObjects/Weapons/WeaponModuleMagazineData", order = 4)]
 public class WeaponModuleMagazineData : ScriptableObject {
 
-	public int moduleSize;
 	public int moduleLevel;
 
 	public GameManager.ProjectileType projectileType;

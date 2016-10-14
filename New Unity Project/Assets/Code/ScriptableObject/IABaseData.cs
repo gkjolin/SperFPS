@@ -4,6 +4,8 @@ using System.Collections;
 [CreateAssetMenu(fileName = "IABaseData", menuName = "ScriptableObjects/Mobs/IABaseData", order = 1)]
 public class IABaseData : ScriptableObject {
 
+	public int moduleLevel;
+
 	public int maxLifePoint;
 	public float orientationSpeed;
 	public float reactionTime;
