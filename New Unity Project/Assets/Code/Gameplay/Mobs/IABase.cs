@@ -40,7 +40,7 @@ public class IABase : MonoBehaviour {
 	private bool stuned;
 	private bool blind;
 
-	void Awake () {
+	public void SetUpIA () {
 		players = GameManager.instance.players;
 		trsf = transform;
 		trsf.SetParent(GameManager.instance.mobsGroup);
@@ -379,11 +379,6 @@ public class IABase : MonoBehaviour {
 
 		rgdBody.isKinematic = b;
 		rgdBody.useGravity = !b;
-	}
-
-	void OnEnable()
-	{
-		ResetVariables();
 	}
 
 	void OnDisable()
