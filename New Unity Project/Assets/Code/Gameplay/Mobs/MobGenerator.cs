@@ -102,7 +102,6 @@ public class MobGenerator : MonoBehaviour {
 			}
 			loopcount += 1;
 		}
-
 		GetBase(iab, r[0]);
 		GetWeapon(iaw, r[1]);
 		GetMEye(iae, r[2]);
