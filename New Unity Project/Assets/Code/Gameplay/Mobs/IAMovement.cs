@@ -3,11 +3,14 @@ using System.Collections;
 
 public class IAMovement : MonoBehaviour {
 
+	public IAMovementData data;
+
 	[HideInInspector]
 	public NavMeshAgent navMeshAgent;
 
-	void Awake () {
-		navMeshAgent = GetComponent<NavMeshAgent>();
+	public void SetUpIA () {
+		navMeshAgent.speed = data.speed;
+		navMeshAgent.acceleration = data.acceleration;
 	}
 		
 	public void GotoDestination(Vector3 position)

@@ -13,7 +13,7 @@ public class IAEye : MonoBehaviour {
 	private Transform trsf;
 	private float sqrRange;
 
-	void Awake()
+	public void SetUpIA()
 	{
 		trsf = transform;
 		sqrRange = data.range*data.range;

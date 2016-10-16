@@ -9,11 +9,12 @@ using System.Collections;
 //	public WeaponModuleMagazine[] weaponModuleMagazines;
 //}
 
-[CreateAssetMenu(fileName = "MobGeneratorData", menuName = "ScriptableObjects/Mobs/MobGeneratorData", order = 3)]
+[CreateAssetMenu(fileName = "MobGeneratorData", menuName = "ScriptableObjects/Mobs/MobGeneratorData", order = 5)]
 public class MobGeneratorData : ScriptableObject {
 	public IABase[] IABase_0;
 	public IAWeapon[] IAWeapon_0;
 	public IAEye[] IAEye_0;
+	public IAMovement[] IAMovement_0;
 }
 
 

@@ -15,6 +15,7 @@ public class IABase : MonoBehaviour {
 	public IABaseData data;
 	public Transform[] eyeSlots;
 	public Transform[] weaponsSlots;
+	public Transform reactorSlot;
 
 	[HideInInspector]
 	public IATarget target;
@@ -32,6 +33,7 @@ public class IABase : MonoBehaviour {
 	private Rigidbody rgdBody;
 	private IABody iaBody;
 	private IAWeapon[] iaWeapons;
+	private Renderer[] renderers;
 	private Vector3 searchPosition;
 	private bool goingToSearchPosition;
 	private bool strafing;
@@ -39,11 +41,16 @@ public class IABase : MonoBehaviour {
 	private bool dying;
 	private bool stuned;
 	private bool blind;
+	private bool setuped = false;
+	private bool iaEnabled = false;
 
 	public void SetUpIA () {
+		renderers = GetComponentsInChildren<Renderer>();
+
 		players = GameManager.instance.players;
 		trsf = transform;
 		trsf.SetParent(GameManager.instance.mobsGroup);
+
 		eyes = GetComponentsInChildren<IAEye>();
 		if(eyes.Length == 0)
 		{
@@ -55,72 +62,86 @@ public class IABase : MonoBehaviour {
 			for(int i = 0; i < eyes.Length; i++)
 			{
 				eyes[i].iaBase = this;
+				eyes[i].SetUpIA();
 			}
 		}
-		target = players[0].iaTarget;
-		iaMovement = GetComponent<IAMovement>();
+		iaMovement = GetComponentInChildren<IAMovement>();
+		iaMovement.navMeshAgent = GetComponent<NavMeshAgent>();
+		iaMovement.SetUpIA();
+		iaBody = GetComponentInChildren<IABody>();
+		iaBody.orientationSpeed = iaMovement.data.orientationSpeed;
+		iaBody.SetUpIA();
+		iaWeapons = GetComponentsInChildren<IAWeapon>();
+		for(int i = 0; i < iaWeapons.Length; i++)
+		{
+			iaWeapons[i].SetUpIA();
+		}
+
+		rgdBody = GetComponent<Rigidbody>();
 		damageable = GetComponentInChildren<Damageable>();
 		damageable.maxLifePoint = data.maxLifePoint;
-		iaBody = GetComponentInChildren<IABody>();
-		iaBody.orientationSpeed = data.orientationSpeed;
-		rgdBody = GetComponent<Rigidbody>();
-		iaWeapons = GetComponentsInChildren<IAWeapon>();
+
+		target = players[0].iaTarget;
 		iaBody.target = target;
 
-		ResetVariables();
+		setuped = true;
+		StartCoroutine(SpawnCoroutine());
 	}
 
 	void Update()
 	{
-		if(damageable.dead == true)
-		{
-			Death();
-			return;
-		}
+		if(iaEnabled)
+			{
+			if(damageable.dead == true)
+			{
+				Death();
+				return;
+			}
 
-		if(damageable.takeDamage == true)
-		{
-			if(data.stunDuration*damageable.stuning > 0.0f)
+			if(damageable.takeDamage == true)
 			{
-				StopAllCoroutines();
-				StartCoroutine(HitCoroutine(damageable.pushBack, damageable.stuning, damageable.damageDirection));
-				iaActions = IAActions.hit;
-				strafing = false;
-				lastKnownPosition = target.position;
-				iaActions = IAActions.move;
+				if(data.stunDuration*damageable.stuning > 0.0f)
+				{
+					StopAllCoroutines();
+					StartCoroutine(HitCoroutine(damageable.pushBack, damageable.stuning, damageable.damageDirection));
+					iaActions = IAActions.hit;
+					strafing = false;
+					lastKnownPosition = target.position;
+					iaActions = IAActions.move;
+				}
+				damageable.takeDamage = false;
 			}
-			damageable.takeDamage = false;
-		}
-		else if(stuned == false)
-		{
-			Detection();
-		}
+			else if(stuned == false)
+			{
+				Detection();
+			}
 
-		switch ((int)iaActions)
-		{
-			case 0 :
+			switch ((int)iaActions)
 			{
-				Wait();
-				break;
-			}
-			case 1 :
-			{
-				Move();
-				break;
-			}
-			case 2 :
-			{
-				Search();
-				break;
-			}
-			case 3 :
-			{
-				break;
-			}
-			case 4 :
-			{
-				Look();
-				break;
+				case 0 :
+				{
+					Wait();
+					break;
+				}
+				case 1 :
+				{
+					Move();
+					break;
+				}
+				case 2 :
+				{
+					Search();
+					break;
+				}
+				case 3 :
+				{
+					break;
+				}
+				case 4 :
+				{
+					Look();
+					break;
+				}
 			}
 		}
 	}
@@ -199,9 +220,9 @@ public class IABase : MonoBehaviour {
 			iaActions = IAActions.search;
 		}
 			
-		if(data.canStrafe == true)
+		if(iaMovement.data.canStrafe == true)
 		{
-			if((trsf.position - target.position).sqrMagnitude < data.startStrafingDisance*data.startStrafingDisance && strafing == false)
+			if((trsf.position - target.position).sqrMagnitude < iaMovement.data.startStrafingDisance*iaMovement.data.startStrafingDisance && strafing == false)
 			{
 				StartCoroutine(StrafeCoroutine());
 			}
@@ -214,7 +235,7 @@ public class IABase : MonoBehaviour {
 		{
 			iaWeapons[i].distanceFromPlayer = distance;
 			iaWeapons[i].targetDetected = shoot;
-			iaWeapons[i].reactionTime = data.reactionTime;
+			iaWeapons[i].reactionTime = iaMovement.data.reactionTime;
 			if(data.canMoveWhileShooting == false && shoot == true && iaWeapons[i].used == true)
 			{
 				strafing = false;
@@ -265,16 +286,16 @@ public class IABase : MonoBehaviour {
 	IEnumerator StrafeCoroutine()
 	{
 		strafing = true;
-		yield return new WaitForSeconds(Random.Range(data.strafeFrequency.x, data.strafeFrequency.y));
+		yield return new WaitForSeconds(Random.Range(iaMovement.data.strafeFrequency.x, iaMovement.data.strafeFrequency.y));
 		WaitForEndOfFrame wait = new WaitForEndOfFrame();
-		float r = Random.Range(data.strafeSpeed.x, data.strafeSpeed.y);
+		float r = Random.Range(iaMovement.data.strafeSpeed.x, iaMovement.data.strafeSpeed.y);
 		Vector3 strafeDir = (iaBody.transform.right*Random.Range(-1.0f,1.0f)).normalized*r;
 		float value = 0.0f;
-		float t = Random.Range(data.strafeDuration.x, data.strafeDuration.y);
+		float t = Random.Range(iaMovement.data.strafeDuration.x, iaMovement.data.strafeDuration.y);
 		while(value < t)
 		{
 			value += Time.deltaTime;
-			float ev = data.strafeCurve.Evaluate(value/t);
+			float ev = iaMovement.data.strafeCurve.Evaluate(value/t);
 			iaMovement.Strafe(strafeDir*Time.deltaTime*ev);
 			yield return wait;
 		}
@@ -346,9 +367,27 @@ public class IABase : MonoBehaviour {
 		gameObject.SetActive(false);
 	}
 
+	IEnumerator SpawnCoroutine()
+	{
+		for(int i = 0; i < renderers.Length; i++)
+		{
+			renderers[i].enabled = false;
+		}
+
+		SetUpComponents(false);
+		ResetVariables();
+
+		yield return new WaitForSeconds(data.spawnDuration);
+		SetUpComponents(true);
+
+		for(int i = 0; i < renderers.Length; i++)
+		{
+			renderers[i].enabled = true;
+		}
+	}
+
 	void ResetVariables()
 	{
-		StopAllCoroutines();
 		iaActions = IAActions.wait;
 		lastKnownPosition = trsf.position;
 		goingToSearchPosition = false;
@@ -356,7 +395,6 @@ public class IABase : MonoBehaviour {
 		shoot = false;
 		dying = false;
 		stuned = false;
-		SetUpComponents(true);
 	}
 
 	void SetUpComponents(bool b)
@@ -379,10 +417,21 @@ public class IABase : MonoBehaviour {
 
 		rgdBody.isKinematic = b;
 		rgdBody.useGravity = !b;
+
+		iaEnabled = b;
+	}
+
+	void OnEnable()
+	{
+		if(setuped == true)
+		{
+			StartCoroutine(SpawnCoroutine());
+		}
 	}
 
 	void OnDisable()
 	{
+		StopAllCoroutines();
 		ResetVariables();
 	}
 }

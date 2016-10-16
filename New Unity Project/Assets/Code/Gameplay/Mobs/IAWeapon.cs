@@ -24,7 +24,7 @@ public class IAWeapon : MonoBehaviour {
 	private bool fire;
 	private Transform trsf;
 
-	void Awake()
+	public void SetUpIA()
 	{
 		trsf = transform;
 		if(data.avoidFriendlyFire)
@@ -151,6 +151,7 @@ public class IAWeapon : MonoBehaviour {
 			Debug.Log("Neen More Chicken!");
 		}
 	}
+
 	void OnDisable()
 	{
 		StopAllCoroutines();

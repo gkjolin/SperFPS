@@ -15,7 +15,7 @@ public class IABody : MonoBehaviour {
 	private NavMeshAgent navMeshAgent;
 	private Transform trsf;
 
-	void Awake () {
+	public void SetUpIA () {
 		navMeshAgent = transform.parent.GetComponent<NavMeshAgent>();
 		trsf = transform;
 	}

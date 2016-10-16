@@ -15,6 +15,7 @@ public class MobGenerator : MonoBehaviour {
 	private IABase iaBase;
 	private IAWeapon iaWeapon;
 	private IAEye iaEye;
+	private IAMovement iaMovement;
 
 	private Transform trsf;
 	private string mobName;
@@ -52,6 +53,8 @@ public class MobGenerator : MonoBehaviour {
 		{
 			Instantiate(iaEye.gameObject, iab.eyeSlots[i].position, iab.eyeSlots[i].rotation, iab.eyeSlots[i]);
 		}
+
+		Instantiate(iaMovement.gameObject, iab.reactorSlot.position, iab.reactorSlot.rotation, iab.reactorSlot);
 			
 		iab.SetUpIA();
 
@@ -63,12 +66,14 @@ public class MobGenerator : MonoBehaviour {
 		IABase[] iab;
 		IAWeapon[] iaw;
 		IAEye[] iae;
+		IAMovement[] iam;
 
 		if(type == 0)
 		{
 			iab = data.IABase_0;
 			iaw = data.IAWeapon_0;
 			iae = data.IAEye_0;
+			iam = data.IAMovement_0;
 			mobName = "SphereBot";
 		}
 		else //Temporary
@@ -76,17 +81,18 @@ public class MobGenerator : MonoBehaviour {
 			iab = data.IABase_0;
 			iaw = data.IAWeapon_0;
 			iae = data.IAEye_0;
+			iam = data.IAMovement_0;
 			mobName = "SphereBot";
 		}
 
-		int[] r = {Random.Range(0, 4), Random.Range(0, 4), Random.Range(0, 4)};
+		int[] r = {Random.Range(0, 4), Random.Range(0, 4), Random.Range(0, 4), Random.Range(0, 4)};
 
 		int loopcount = 0;
 
-		while(r[0] + r[1] + r[2] != level)
+		while(r[0] + r[1] + r[2] + r[3] != level)
 		{
-			int i = loopcount%3;
-			if(r[0] + r[1] + r[2] > level)
+			int i = loopcount%4;
+			if(r[0] + r[1] + r[2] + r[3] > level)
 			{
 				if(r[i]-1 >= 0)
 				{
@@ -102,9 +108,12 @@ public class MobGenerator : MonoBehaviour {
 			}
 			loopcount += 1;
 		}
+
+		//Debug.Log(r[0].ToString()+r[1].ToString()+r[2].ToString()+r[3].ToString());
 		GetBase(iab, r[0]);
 		GetWeapon(iaw, r[1]);
-		GetMEye(iae, r[2]);
+		GetEye(iae, r[2]);
+		GetReactor(iam, r[3]);
 	}
 
 	void GetBase(IABase[] iab, int level)
@@ -129,13 +138,24 @@ public class MobGenerator : MonoBehaviour {
 		}
 	}
 
-	void GetMEye(IAEye[] iae, int level)
+	void GetEye(IAEye[] iae, int level)
 	{
 		for(int i = 0; i < iae.Length; i ++)
 		{
 			if(iae[i].data.moduleLevel == level)
 			{
 				iaEye = iae[i];
+			}
+		}
+	}
+
+	void GetReactor(IAMovement[] iam, int level)
+	{
+		for(int i = 0; i < iam.Length; i ++)
+		{
+			if(iam[i].data.moduleLevel == level)
+			{
+				iaMovement = iam[i];
 			}
 		}
 	}

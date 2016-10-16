@@ -9,10 +9,12 @@ ModelImporter:
     100002: Eye
     100004: Weapon_L
     100006: Weapon_R
+    100008: Reactor
     400000: //RootNode
     400002: Eye
     400004: Weapon_L
     400006: Weapon_R
+    400008: Reactor
     2300000: //RootNode
     3300000: //RootNode
     4300000: SphereBot_LVL2
