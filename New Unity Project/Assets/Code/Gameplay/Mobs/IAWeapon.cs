@@ -112,15 +112,22 @@ public class IAWeapon : MonoBehaviour {
 				}
 
 			projectils[i] = projectilsPool.GetCurrentPooledGameObject();
-			projectils[i].transform.position = cannons[i].transform.position;
+			if(projectils[i])
+			{
+				projectils[i].transform.position = cannons[i].transform.position;
 
-			Vector3 rot = cannons[i].transform.rotation.eulerAngles;
-			rot.x += Random.Range(-data.precision,data.precision);
-			rot.y += Random.Range(-data.precision,data.precision);
-			rot.z += Random.Range(-data.precision,data.precision);
-			projectils[i].transform.rotation = Quaternion.Euler(rot);
+				Vector3 rot = cannons[i].transform.rotation.eulerAngles;
+				rot.x += Random.Range(-data.precision,data.precision);
+				rot.y += Random.Range(-data.precision,data.precision);
+				rot.z += Random.Range(-data.precision,data.precision);
+				projectils[i].transform.rotation = Quaternion.Euler(rot);
 
-			projectils[i].SetActive(true);
+				projectils[i].SetActive(true);
+			}
+			else
+			{
+				Debug.Log("No More Projectile in pool!");
+			}
 		}
 
 		float value = 0.0f;

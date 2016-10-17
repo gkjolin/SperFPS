@@ -28,6 +28,7 @@ public class ObjectPoolManager : MonoBehaviour {
 
 	[Space(20)]
 	public ObjectPool Drop01_AS;
+	[Space(10)]
 	public ObjectPool GunReload01_AS;
 	public ObjectPool GunReload02_AS;
 	public ObjectPool GunReload03_AS;

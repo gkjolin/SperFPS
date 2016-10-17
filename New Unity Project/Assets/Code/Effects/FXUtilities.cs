@@ -24,7 +24,7 @@ public class FXUtilities : MonoBehaviour {
 		}
 		else
 		{
-			Debug.Log("Neen More Chicken! " + go.name);
+			Debug.Log("Neen More Chicken!");
 		}
 	}
 }
