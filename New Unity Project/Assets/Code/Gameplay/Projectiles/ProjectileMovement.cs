@@ -149,32 +149,32 @@ public class ProjectileMovement : MonoBehaviour {
 			}
 
 			//FXs/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-			SetFx(impactFx, hit);
+			FXUtilities.instance.SetFx(impactFx, hit.collider.transform, hit.point, hit.normal, false);
 		}
 	}
 
-	void SetFx(GameObject go, RaycastHit h)
-	{
-		if(go)
-		{
-			if(data.projectileStickToTarget)
-			{
-				go.transform.parent = h.collider.transform;
-				go.transform.forward = -trsf.forward;
-			}
-			else
-			{
-				go.transform.forward = h.normal;
-			}
-
-			go.transform.position = h.point;
-			go.SetActive(true);
-		}
-		else
-		{
-			Debug.Log("Neen More Chicken!");
-		}
-	}
+//	void SetFx(GameObject go, RaycastHit h)
+//	{
+//		if(go)
+//		{
+//			if(data.projectileStickToTarget)
+//			{
+//				go.transform.parent = h.collider.transform;
+//				go.transform.forward = -trsf.forward;
+//			}
+//			else
+//			{
+//				go.transform.forward = h.normal;
+//			}
+//
+//			go.transform.position = h.point;
+//			go.SetActive(true);
+//		}
+//		else
+//		{
+//			Debug.Log("Neen More Chicken!");
+//		}
+//	}
 
 	protected virtual void SetUpImpact()
 	{

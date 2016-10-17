@@ -49,6 +49,7 @@
      <Compile Include="Assets\Code\Audio\SoundObjectDeactivation.cs" />
      <Compile Include="Assets\Code\Audio\SoundRandomizer.cs" />
      <Compile Include="Assets\Code\Effects\CameraShake.cs" />
+     <Compile Include="Assets\Code\Effects\FXUtilities.cs" />
      <Compile Include="Assets\Code\Effects\PixelEffect.cs" />
      <Compile Include="Assets\Code\Effects\PostProcess.cs" />
      <Compile Include="Assets\Code\Gameplay\Managers\GameManager.cs" />
@@ -203,6 +204,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\Blend.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
      <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
+     <None Include="Assets\Code\Shader\PAddHexaSphere.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
      <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
      <None Include="Assets\Code\Shader\PostProcess.shader" />

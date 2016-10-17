@@ -122,7 +122,8 @@ public class GenericWeapon : GenericItem {
 				if(weaponModuleMagazine.currentMagazine > 0)
 				{
 					GameObject fireFx = weaponModuleMagazine.fireFXPool.GetCurrentPooledGameObject();
-					SetFx(fireFx, weaponModuleCannon.cannons[i].transform);
+					Transform t = weaponModuleCannon.cannons[i].transform;
+					FXUtilities.instance.SetFx(fireFx, t, t.position, t.forward, true);
 
 					projectils[i] = weaponModuleMagazine.projectilsPool.GetCurrentPooledGameObject();
 
@@ -226,20 +227,20 @@ public class GenericWeapon : GenericItem {
 		used = false;
 	}
 
-	void SetFx(GameObject go, Transform t)
-	{
-		if(go)
-		{
-			go.transform.position = t.position;
-			go.transform.forward = t.forward;
-			go.SetActive(true);
-			go.transform.SetParent(t);
-		}
-		else
-		{
-			Debug.Log("Neen More Chicken!");
-		}
-	}
+//	void SetFx(GameObject go, Transform t)
+//	{
+//		if(go)
+//		{
+//			go.transform.position = t.position;
+//			go.transform.forward = t.forward;
+//			go.SetActive(true);
+//			go.transform.SetParent(t);
+//		}
+//		else
+//		{
+//			Debug.Log("Neen More Chicken!");
+//		}
+//	}
 
 	public override void UpdateUI(bool empty)
 	{

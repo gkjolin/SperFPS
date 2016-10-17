@@ -2,11 +2,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Gameplay\Mobs\IABase.cs">
     <Files>
-      <File FileName="Assets\Code\Gameplay\Mobs\IABase.cs" Line="371" Column="3" />
-      <File FileName="Assets\Code\Gameplay\Mobs\MobGenerator.cs" Line="112" Column="5" />
-      <File FileName="Assets\Code\Gameplay\Mobs\IAMovement.cs" Line="26" Column="18" />
-      <File FileName="Assets\Code\ScriptableObject\MobGeneratorData.cs" Line="17" Column="21" />
-      <File FileName="Assets\Code\ScriptableObject\IABaseData.cs" Line="19" Column="28" />
+      <File FileName="Assets\Code\Gameplay\Mobs\IABase.cs" Line="366" Column="3" />
+      <File FileName="Assets\Code\Gameplay\Weapon\GenericWeapon.cs" Line="126" Column="65" />
+      <File FileName="Assets\Code\Effects\FXUtilities.cs" Line="23" Column="23" />
+      <File FileName="Assets\Code\Gameplay\Projectiles\ProjectileMovement.cs" Line="153" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

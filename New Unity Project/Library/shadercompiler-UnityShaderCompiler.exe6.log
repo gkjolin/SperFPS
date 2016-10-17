@@ -1,52 +1,102 @@
 Base path: D:/logiciels travail/Unity5/Editor/Data
 Cmd: getPlatforms
 Cmd: compileSnippet
-  error: 2 plat 1 at (62): NaN and infinity literals not allowed by shader model\nCompiling Fragment program with DIRECTIONAL
+  error: 2 plat 1 at (62): NaN and infinity literals not allowed by shader model\nCompiling Fragment program with SPOT SHADOWS_DEPTH
 Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
-  error: 1 plat 1 at (62): floating point division by zero\nCompiling Fragment program with DIRECTIONAL
+  error: 1 plat 1 at (62): floating point division by zero\nCompiling Fragment program with SPOT SHADOWS_DEPTH
 Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
-  api=1 type=1 insize=1920 outsize=0 kw=DIRECTIONAL pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0
+  api=1 type=1 insize=1920 outsize=0 kw=SPOT SHADOWS_DEPTH pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0
 Cmd: compileSnippet
-  error: 2 plat 1 at (62): NaN and infinity literals not allowed by shader model\nCompiling Fragment program with POINT SHADOWS_CUBE SHADOWS_SOFT
+  error: 2 plat 1 at (62): NaN and infinity literals not allowed by shader model\nCompiling Fragment program with SPOT SHADOWS_DEPTH UNITY_HDR_ON
 Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
-  error: 1 plat 1 at (62): floating point division by zero\nCompiling Fragment program with POINT SHADOWS_CUBE SHADOWS_SOFT
+  error: 1 plat 1 at (62): floating point division by zero\nCompiling Fragment program with SPOT SHADOWS_DEPTH UNITY_HDR_ON
 Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
-  api=1 type=1 insize=1920 outsize=0 kw=POINT SHADOWS_CUBE SHADOWS_SOFT pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0
+  api=1 type=1 insize=1920 outsize=0 kw=SPOT SHADOWS_DEPTH UNITY_HDR_ON pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0
 Cmd: compileSnippet
-  error: 2 plat 1 at (62): NaN and infinity literals not allowed by shader model\nCompiling Fragment program with POINT_COOKIE UNITY_HDR_ON
-Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
-  error: 1 plat 1 at (62): floating point division by zero\nCompiling Fragment program with POINT_COOKIE UNITY_HDR_ON
-Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
-  api=1 type=1 insize=1920 outsize=0 kw=POINT_COOKIE UNITY_HDR_ON pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0
+  api=4 type=0 insize=7349 outsize=2806 kw=DIRECTIONAL SHADOWS_SCREEN LIGHTMAP_OFF DYNAMICLIGHTMAP_OFF VERTEXLIGHT_ON pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
 Cmd: compileSnippet
-  error: 2 plat 1 at (62): NaN and infinity literals not allowed by shader model\nCompiling Fragment program with DIRECTIONAL_COOKIE SHADOWS_SCREEN UNITY_HDR_ON
-Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
-  error: 1 plat 1 at (62): floating point division by zero\nCompiling Fragment program with DIRECTIONAL_COOKIE SHADOWS_SCREEN UNITY_HDR_ON
-Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
-  api=1 type=1 insize=1920 outsize=0 kw=DIRECTIONAL_COOKIE SHADOWS_SCREEN UNITY_HDR_ON pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0
+  api=1 type=1 insize=7349 outsize=3264 kw=DIRECTIONAL SHADOWS_SCREEN LIGHTMAP_OFF DYNAMICLIGHTMAP_OFF pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
 Cmd: compileSnippet
-  error: 2 plat 1 at (62): NaN and infinity literals not allowed by shader model\nCompiling Fragment program with DIRECTIONAL
-Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
-  error: 1 plat 1 at (62): floating point division by zero\nCompiling Fragment program with DIRECTIONAL
-Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
-  api=1 type=1 insize=1920 outsize=0 kw=DIRECTIONAL pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0
+  api=1 type=0 insize=4145 outsize=592 kw=SPOT pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
 Cmd: compileSnippet
-  error: 2 plat 1 at (62): NaN and infinity literals not allowed by shader model\nCompiling Fragment program with POINT SHADOWS_CUBE
-Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
-  error: 1 plat 1 at (62): floating point division by zero\nCompiling Fragment program with POINT SHADOWS_CUBE
-Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
-  api=1 type=1 insize=1920 outsize=0 kw=POINT SHADOWS_CUBE pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0
+  api=4 type=0 insize=4145 outsize=1662 kw=SPOT SHADOWS_DEPTH pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
 Cmd: compileSnippet
-  error: 2 plat 1 at (62): NaN and infinity literals not allowed by shader model\nCompiling Fragment program with POINT_COOKIE UNITY_HDR_ON
+  api=4 type=0 insize=4145 outsize=1414 kw=POINT SHADOWS_CUBE SHADOWS_SOFT pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=4145 outsize=1382 kw=POINT_COOKIE FOG_LINEAR pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=4145 outsize=724 kw=POINT SHADOWS_CUBE FOG_LINEAR pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=4145 outsize=1738 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT FOG_LINEAR pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=4145 outsize=1756 kw=POINT_COOKIE pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=4145 outsize=1680 kw=DIRECTIONAL_COOKIE SHADOWS_SCREEN pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=4145 outsize=3174 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=4145 outsize=1932 kw=SPOT FOG_LINEAR pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=4145 outsize=1592 kw=DIRECTIONAL SHADOWS_SCREEN FOG_LINEAR pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=4145 outsize=2910 kw=POINT_COOKIE SHADOWS_CUBE FOG_LINEAR pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+Cmd: compileSnippet
+  error: 2 plat 1 at (62): NaN and infinity literals not allowed by shader model\nCompiling Fragment program with DIRECTIONAL_COOKIE
 Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
-  error: 1 plat 1 at (62): floating point division by zero\nCompiling Fragment program with POINT_COOKIE UNITY_HDR_ON
+  error: 1 plat 1 at (62): floating point division by zero\nCompiling Fragment program with DIRECTIONAL_COOKIE
 Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
-  api=1 type=1 insize=1920 outsize=0 kw=POINT_COOKIE UNITY_HDR_ON pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0
+  api=1 type=1 insize=1920 outsize=0 kw=DIRECTIONAL_COOKIE pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0
+Cmd: compileSnippet
+  error: 2 plat 1 at (62): NaN and infinity literals not allowed by shader model\nCompiling Fragment program with POINT_COOKIE SHADOWS_CUBE
+Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
+  error: 1 plat 1 at (62): floating point division by zero\nCompiling Fragment program with POINT_COOKIE SHADOWS_CUBE
+Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
+  api=1 type=1 insize=1920 outsize=0 kw=POINT_COOKIE SHADOWS_CUBE pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0
+Cmd: compileSnippet
+  error: 2 plat 1 at (62): NaN and infinity literals not allowed by shader model\nCompiling Fragment program with SPOT SHADOWS_DEPTH UNITY_HDR_ON
+Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
+  error: 1 plat 1 at (62): floating point division by zero\nCompiling Fragment program with SPOT SHADOWS_DEPTH UNITY_HDR_ON
+Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
+  api=1 type=1 insize=1920 outsize=0 kw=SPOT SHADOWS_DEPTH UNITY_HDR_ON pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0
+Cmd: compileSnippet
+  error: 2 plat 1 at (62): NaN and infinity literals not allowed by shader model\nCompiling Fragment program with DIRECTIONAL SHADOWS_SCREEN
+Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
+  error: 1 plat 1 at (62): floating point division by zero\nCompiling Fragment program with DIRECTIONAL SHADOWS_SCREEN
+Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
+  api=1 type=1 insize=1920 outsize=0 kw=DIRECTIONAL SHADOWS_SCREEN pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0
+Cmd: compileSnippet
+  error: 2 plat 1 at (62): NaN and infinity literals not allowed by shader model\nCompiling Fragment program with DIRECTIONAL UNITY_HDR_ON
+Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
+  error: 1 plat 1 at (62): floating point division by zero\nCompiling Fragment program with DIRECTIONAL UNITY_HDR_ON
+Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
+  api=1 type=1 insize=1920 outsize=0 kw=DIRECTIONAL UNITY_HDR_ON pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0
+Cmd: compileSnippet
+  error: 2 plat 1 at (62): NaN and infinity literals not allowed by shader model\nCompiling Fragment program with DIRECTIONAL_COOKIE UNITY_HDR_ON
+Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
+  error: 1 plat 1 at (62): floating point division by zero\nCompiling Fragment program with DIRECTIONAL_COOKIE UNITY_HDR_ON
+Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
+  api=1 type=1 insize=1920 outsize=0 kw=DIRECTIONAL_COOKIE UNITY_HDR_ON pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0
 Cmd: compileSnippet
   error: 2 plat 1 at (62): NaN and infinity literals not allowed by shader model\nCompiling Fragment program with POINT SHADOWS_CUBE SHADOWS_SOFT UNITY_HDR_ON
 Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
   error: 1 plat 1 at (62): floating point division by zero\nCompiling Fragment program with POINT SHADOWS_CUBE SHADOWS_SOFT UNITY_HDR_ON
 Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
   api=1 type=1 insize=1920 outsize=0 kw=POINT SHADOWS_CUBE SHADOWS_SOFT UNITY_HDR_ON pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0
-
-Quitting shader compiler process
+Cmd: compileSnippet
+  error: 2 plat 1 at (62): NaN and infinity literals not allowed by shader model\nCompiling Fragment program with SPOT SHADOWS_DEPTH
+Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
+  error: 1 plat 1 at (62): floating point division by zero\nCompiling Fragment program with SPOT SHADOWS_DEPTH
+Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
+  api=1 type=1 insize=1920 outsize=0 kw=SPOT SHADOWS_DEPTH pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0
+Cmd: compileSnippet
+  error: 2 plat 1 at (62): NaN and infinity literals not allowed by shader model\nCompiling Fragment program with DIRECTIONAL UNITY_HDR_ON
+Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
+  error: 1 plat 1 at (62): floating point division by zero\nCompiling Fragment program with DIRECTIONAL UNITY_HDR_ON
+Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
+  api=1 type=1 insize=1920 outsize=0 kw=DIRECTIONAL UNITY_HDR_ON pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0
+Cmd: compileSnippet
+  error: 2 plat 1 at (62): NaN and infinity literals not allowed by shader model\nCompiling Fragment program with SPOT SHADOWS_DEPTH UNITY_HDR_ON
+Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
+  error: 1 plat 1 at (62): floating point division by zero\nCompiling Fragment program with SPOT SHADOWS_DEPTH UNITY_HDR_ON
+Platform defines: UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING
+  api=1 type=1 insize=1920 outsize=0 kw=SPOT SHADOWS_DEPTH UNITY_HDR_ON pd=UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=0

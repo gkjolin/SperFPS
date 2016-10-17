@@ -336,18 +336,8 @@ public class IABase : MonoBehaviour {
 		rgdBody.AddForceAtPosition(damageable.damageDirection*force, damageable.damagePosition, ForceMode.VelocityChange);
 		rgdBody.AddTorque(Vector3.Cross(damageable.damageDirection + Random.insideUnitSphere, Vector3.up)*-force, ForceMode.VelocityChange);
 
-		GameObject deathParticle = ObjectPoolManager.instance.sphereBot_LVL0_Death.GetCurrentPooledGameObject();
-		if(deathParticle)
-		{
-			deathParticle.SetActive(true);
-			deathParticle.transform.position = trsf.position;
-			deathParticle.transform.rotation = trsf.rotation;
-			deathParticle.transform.SetParent(trsf);
-		}
-		else
-		{
-			Debug.Log("Neen More Chicken!");
-		}
+		GameObject deathParticle = ObjectPoolManager.instance.sphereBot_Death.GetCurrentPooledGameObject();
+		FXUtilities.instance.SetFx(deathParticle, trsf, trsf.position, trsf.forward, true);
 
 		yield return new WaitForSeconds(data.deathDuration);
 
@@ -375,7 +365,11 @@ public class IABase : MonoBehaviour {
 		}
 
 		SetUpComponents(false);
+		rgdBody.isKinematic = true;
 		ResetVariables();
+
+		GameObject spawnParticle = ObjectPoolManager.instance.sphereBot_Spawn.GetCurrentPooledGameObject();
+		FXUtilities.instance.SetFx(spawnParticle, trsf, trsf.position, trsf.forward, true);
 
 		yield return new WaitForSeconds(data.spawnDuration);
 		SetUpComponents(true);

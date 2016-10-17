@@ -23,7 +23,8 @@ public class ObjectPoolManager : MonoBehaviour {
 	public ObjectPool hostileBulletImpact;
 
 	[Space(20)]
-	public ObjectPool sphereBot_LVL0_Death;
+	public ObjectPool sphereBot_Death;
+	public ObjectPool sphereBot_Spawn;
 
 	[Space(20)]
 	public ObjectPool Drop01_AS;
