@@ -24,7 +24,7 @@ public class SpawnUtilities : MonoBehaviour {
 		}
 		else
 		{
-			Debug.Log("Neen More fx!");
+			Debug.Log("Need More fx!");
 		}
 	}
 
@@ -41,7 +41,7 @@ public class SpawnUtilities : MonoBehaviour {
 		}
 		else
 		{
-			Debug.Log("Neen More audio!");
+			Debug.Log("Need More audio!");
 		}
 	}
 }

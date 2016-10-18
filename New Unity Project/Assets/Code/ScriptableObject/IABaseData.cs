@@ -19,5 +19,8 @@ public class IABaseData : ScriptableObject {
 	public float deathDuration;
 	public float deathPushBack;
 	public float spawnDuration;
+	public float moveSoundVolume;
+	public float moveSoundPitch;
+	public float moveSoundMaxSpeed;
 
 }

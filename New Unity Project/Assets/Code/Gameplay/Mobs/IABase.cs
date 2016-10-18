@@ -50,6 +50,8 @@ public class IABase : MonoBehaviour {
 	private ObjectPool detectedSoundPool;
 	private ObjectPool hitSoundPool;
 
+	private AudioSource moveSoundSource;
+
 	public void SetUpIA () {
 		renderers = GetComponentsInChildren<Renderer>();
 
@@ -87,6 +89,7 @@ public class IABase : MonoBehaviour {
 		damageable = GetComponentInChildren<Damageable>();
 		damageable.maxLifePoint = data.maxLifePoint;
 
+		moveSoundSource = GetComponent<AudioSource>();
 		target = players[0].iaTarget;
 		iaBody.target = target;
 
@@ -99,7 +102,7 @@ public class IABase : MonoBehaviour {
 	void Update()
 	{
 		if(iaEnabled)
-			{
+		{
 			if(damageable.dead == true)
 			{
 				Death();
@@ -154,6 +157,18 @@ public class IABase : MonoBehaviour {
 					break;
 				}
 			}
+		}
+
+		float speed = Mathf.Clamp(iaMovement.navMeshAgent.velocity.magnitude, 0f, data.moveSoundMaxSpeed);
+		moveSoundSource.volume = speed*data.moveSoundVolume;
+		moveSoundSource.pitch = speed*data.moveSoundPitch;
+		if(moveSoundSource.volume <= 0.0f && moveSoundSource.isPlaying == true)
+		{
+			moveSoundSource.Stop();
+		}
+		else if(moveSoundSource.isPlaying == false)
+		{
+			moveSoundSource.Play();
 		}
 	}
 
