@@ -8,6 +8,7 @@ public class PlayerSound : MonoBehaviour {
 	public AudioSource jumpSound;
 	public AudioSource landSound;
 	public AudioSource movingSound;
+	public AudioSource hitSound;
 	public Rigidbody rgdBody;
 	public PlayerMove playerMove;
 	public float movingSoundVolume;
@@ -22,6 +23,7 @@ public class PlayerSound : MonoBehaviour {
 	private SoundRandomizer rightStepSoundRandomizer;
 	private SoundRandomizer jumpSoundRandomizer;
 	private SoundRandomizer landSoundRandomizer;
+	private SoundRandomizer hitSoundRandomizer;
 
 	void Awake()
 	{
@@ -29,6 +31,8 @@ public class PlayerSound : MonoBehaviour {
 		rightStepSoundRandomizer = rightStepSound.GetComponent<SoundRandomizer>();
 		jumpSoundRandomizer = jumpSound.GetComponent<SoundRandomizer>();
 		landSoundRandomizer = landSound.GetComponent<SoundRandomizer>();
+		hitSoundRandomizer = hitSound.GetComponent<SoundRandomizer>();
+
 		stepFrequency *= Mathf.PI;
 	}
 
@@ -54,10 +58,17 @@ public class PlayerSound : MonoBehaviour {
 		{
 			playingLandSound = false;
 		}
-
+			
 		float v = Mathf.Clamp(rgdBody.velocity.magnitude, 0.0f, 10.0f);
 		movingSound.volume = movingSoundVolume*v;
 		movingSound.pitch = movingSoundPitch*v;
+	}
+
+	public void PlayHitSound(Vector3 p)
+	{
+		hitSoundRandomizer.Randomize();
+		hitSound.transform.position = p;
+		hitSound.Play();
 	}
 
 	IEnumerator stepSoundCoroutine()

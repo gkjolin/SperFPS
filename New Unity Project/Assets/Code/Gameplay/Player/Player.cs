@@ -18,7 +18,7 @@ public class Player : MonoBehaviour {
 	public MouseLook mouseLook;
 	public PostProcess postProcess;
 	public Collider coll;
-
+	public PlayerSound playerSound;
 
 	[HideInInspector]
 	public float playerEquipmentWeight;
@@ -78,6 +78,7 @@ public class Player : MonoBehaviour {
 			postProcess.StopAllCoroutines();
 			postProcess.hitPosition = damageable.damagePosition;
 			postProcess.StartCoroutine("HitEffect");
+			playerSound.PlayHitSound(damageable.damagePosition);
 		}
 	}
 

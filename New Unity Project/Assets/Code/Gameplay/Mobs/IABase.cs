@@ -261,7 +261,7 @@ public class IABase : MonoBehaviour {
 			
 		if(iaMovement.data.canStrafe == true)
 		{
-			if((trsf.position - target.position).sqrMagnitude < iaMovement.data.startStrafingDisance*iaMovement.data.startStrafingDisance && strafing == false)
+			if((trsf.position - target.position).sqrMagnitude < iaMovement.data.startStrafingDisance*iaMovement.data.startStrafingDisance && strafing == false && detected == true)
 			{
 				StartCoroutine(StrafeCoroutine());
 			}
@@ -336,6 +336,8 @@ public class IABase : MonoBehaviour {
 			value += Time.deltaTime;
 			float ev = iaMovement.data.strafeCurve.Evaluate(value/t);
 			iaMovement.Strafe(strafeDir*Time.deltaTime*ev);
+			iaBody.look = true;
+			iaBody.lookAtTarget = true;
 			yield return wait;
 		}
 		strafing = false;
