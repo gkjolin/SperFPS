@@ -43,6 +43,12 @@ public class IABase : MonoBehaviour {
 	private bool blind;
 	private bool setuped = false;
 	private bool iaEnabled = false;
+	private bool detectedSound = false;
+
+	private ObjectPool deathPool;
+	private ObjectPool spawnPool;
+	private ObjectPool detectedSoundPool;
+	private ObjectPool hitSoundPool;
 
 	public void SetUpIA () {
 		renderers = GetComponentsInChildren<Renderer>();
@@ -84,6 +90,8 @@ public class IABase : MonoBehaviour {
 		target = players[0].iaTarget;
 		iaBody.target = target;
 
+		SetUpPools();
+
 		setuped = true;
 		StartCoroutine(SpawnCoroutine());
 	}
@@ -100,6 +108,9 @@ public class IABase : MonoBehaviour {
 
 			if(damageable.takeDamage == true)
 			{
+				GameObject hitSound = hitSoundPool.GetCurrentPooledGameObject();
+				SpawnUtilities.instance.SetAudio(hitSound, trsf, true);
+
 				if(data.stunDuration*damageable.stuning > 0.0f)
 				{
 					StopAllCoroutines();
@@ -161,6 +172,12 @@ public class IABase : MonoBehaviour {
 			{
 				shoot = true;
 			}
+			if(detectedSound == false)
+			{
+				GameObject dSound = detectedSoundPool.GetCurrentPooledGameObject();
+				SpawnUtilities.instance.SetAudio(dSound, trsf, true);
+				detectedSound = true;
+			}
 		}
 		else if(blind == false)
 		{
@@ -172,6 +189,12 @@ public class IABase : MonoBehaviour {
 					detected = true;
 					shoot = true;
 					iaActions = IAActions.move;
+					if(detectedSound == false)
+					{
+						GameObject dSound = detectedSoundPool.GetCurrentPooledGameObject();
+						SpawnUtilities.instance.SetAudio(dSound, trsf, true);
+						detectedSound = true;
+					}
 					break;
 				}
 				else
@@ -217,6 +240,7 @@ public class IABase : MonoBehaviour {
 		iaMovement.GotoDestination(lastKnownPosition);
 		if(iaMovement.isAtDestination() == true && detected == false)
 		{
+			detectedSound = false;
 			iaActions = IAActions.search;
 		}
 			
@@ -336,8 +360,8 @@ public class IABase : MonoBehaviour {
 		rgdBody.AddForceAtPosition(damageable.damageDirection*force, damageable.damagePosition, ForceMode.VelocityChange);
 		rgdBody.AddTorque(Vector3.Cross(damageable.damageDirection + Random.insideUnitSphere, Vector3.up)*-force, ForceMode.VelocityChange);
 
-		GameObject deathParticle = ObjectPoolManager.instance.sphereBot_Death.GetCurrentPooledGameObject();
-		FXUtilities.instance.SetFx(deathParticle, trsf, trsf.position, trsf.forward, true);
+		GameObject deathParticle = deathPool.GetCurrentPooledGameObject();
+		SpawnUtilities.instance.SetFx(deathParticle, trsf, trsf.position, trsf.forward, true);
 
 		yield return new WaitForSeconds(data.deathDuration);
 
@@ -368,8 +392,8 @@ public class IABase : MonoBehaviour {
 		rgdBody.isKinematic = true;
 		ResetVariables();
 
-		GameObject spawnParticle = ObjectPoolManager.instance.sphereBot_Spawn.GetCurrentPooledGameObject();
-		FXUtilities.instance.SetFx(spawnParticle, trsf, trsf.position, trsf.forward, true);
+		GameObject spawnParticle = spawnPool.GetCurrentPooledGameObject();
+		SpawnUtilities.instance.SetFx(spawnParticle, trsf, trsf.position, trsf.forward, true);
 
 		yield return new WaitForSeconds(data.spawnDuration);
 		SetUpComponents(true);
@@ -389,6 +413,7 @@ public class IABase : MonoBehaviour {
 		shoot = false;
 		dying = false;
 		stuned = false;
+		detectedSound = false;
 	}
 
 	void SetUpComponents(bool b)
@@ -413,6 +438,21 @@ public class IABase : MonoBehaviour {
 		rgdBody.useGravity = !b;
 
 		iaEnabled = b;
+	}
+
+	void SetUpPools()
+	{
+		switch(data.mobType)
+		{
+		case GameManager.MobType.SphereBot :
+			{
+				deathPool = ObjectPoolManager.instance.sphereBot_Death;
+				spawnPool = ObjectPoolManager.instance.sphereBot_Spawn;
+				detectedSoundPool = ObjectPoolManager.instance.SphereBot_AS;
+				hitSoundPool = ObjectPoolManager.instance.SphereBotHit_AS;
+				break;
+			}
+		}
 	}
 
 	void OnEnable()

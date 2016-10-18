@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FXUtilities : MonoBehaviour {
+public class SpawnUtilities : MonoBehaviour {
 
-	public static FXUtilities instance;
+	public static SpawnUtilities instance;
 
 	void Awake () 
 	{
@@ -24,7 +24,24 @@ public class FXUtilities : MonoBehaviour {
 		}
 		else
 		{
-			Debug.Log("Neen More Chicken!");
+			Debug.Log("Neen More fx!");
+		}
+	}
+
+	public void SetAudio(GameObject go, Transform t, bool setParent)
+	{
+		if(go)
+		{
+			go.transform.position = t.position;
+			if(setParent)
+			{
+				go.transform.SetParent(t);
+			}
+			go.SetActive(true);
+		}
+		else
+		{
+			Debug.Log("Neen More audio!");
 		}
 	}
 }

@@ -149,7 +149,7 @@ public class ProjectileMovement : MonoBehaviour {
 			}
 
 			//FXs/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-			FXUtilities.instance.SetFx(impactFx, hit.collider.transform, hit.point, hit.normal, false);
+			SpawnUtilities.instance.SetFx(impactFx, hit.collider.transform, hit.point, hit.normal, false);
 		}
 	}
 

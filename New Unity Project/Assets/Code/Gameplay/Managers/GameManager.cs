@@ -20,6 +20,12 @@ public class GameManager : MonoBehaviour {
 		HostileLaser = 1,
 	};
 
+	public enum MobType
+	{
+		SphereBot = 0,
+		CubeBot = 1,
+	};
+
 	public static GameManager instance;
 
 	void Awake () {

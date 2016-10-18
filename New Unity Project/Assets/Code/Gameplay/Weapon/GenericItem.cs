@@ -62,7 +62,7 @@ public class GenericItem : MonoBehaviour {
 	public virtual void Drop(float force, float torque)
 	{
 		GameObject dropGO = ObjectPoolManager.instance.Drop01_AS.GetCurrentPooledGameObject();
-		SetSound(dropGO, trsf);
+		SpawnUtilities.instance.SetAudio(dropGO, trsf, false);
 		StopAllCoroutines();
 		inHand = false;
 		UpdateUI(true);
@@ -117,16 +117,6 @@ public class GenericItem : MonoBehaviour {
 			{
 				renderers[i].material = sharedMaterial;
 			}
-		}
-	}
-
-	protected void SetSound(GameObject go, Transform t)
-	{
-		if(go)
-		{
-			go.transform.SetParent(t);
-			go.transform.localPosition = Vector3.zero;
-			go.SetActive(true);
 		}
 	}
 

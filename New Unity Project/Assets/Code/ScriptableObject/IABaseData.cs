@@ -6,6 +6,8 @@ public class IABaseData : ScriptableObject {
 
 	public int moduleLevel;
 
+	public GameManager.MobType mobType;
+
 	public int maxLifePoint;
 	public bool canMoveWhileShooting;
 	public float hearing;

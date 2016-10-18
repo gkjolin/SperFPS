@@ -84,7 +84,7 @@ public class GenericWeapon : GenericItem {
 	{
 		base.Take(w);
 		GameObject takeGO = weaponModuleBase.grabSoundPool.GetCurrentPooledGameObject();
-		SetSound(takeGO, trsf);
+		SpawnUtilities.instance.SetAudio(takeGO, trsf, false);
 	}
 
 	IEnumerator FireSequence()
@@ -109,7 +109,7 @@ public class GenericWeapon : GenericItem {
 			}
 
 			GameObject shootGO = weaponModuleCannon.shootSoundPool.GetCurrentPooledGameObject();
-			SetSound(shootGO, trsf);
+			SpawnUtilities.instance.SetAudio(shootGO, trsf, true);
 
 			noise = weaponModuleCannon.data.weaponNoise;
 
@@ -123,7 +123,7 @@ public class GenericWeapon : GenericItem {
 				{
 					GameObject fireFx = weaponModuleMagazine.fireFXPool.GetCurrentPooledGameObject();
 					Transform t = weaponModuleCannon.cannons[i].transform;
-					FXUtilities.instance.SetFx(fireFx, t, t.position, t.forward, true);
+					SpawnUtilities.instance.SetFx(fireFx, t, t.position, t.forward, true);
 
 					projectils[i] = weaponModuleMagazine.projectilsPool.GetCurrentPooledGameObject();
 
@@ -198,7 +198,7 @@ public class GenericWeapon : GenericItem {
 			{
 				reloadSoundPlayed = true;
 				GameObject reloadGO = weaponModuleMagazine.reloadSoundPool.GetCurrentPooledGameObject();
-				SetSound(reloadGO, trsf);
+				SpawnUtilities.instance.SetAudio(reloadGO, trsf, true);
 			}
 
 			float ev = weaponModuleBase.data.weaponReloadCurve.Evaluate(value/weaponModuleMagazine.data.reloadTime);

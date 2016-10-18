@@ -41,6 +41,9 @@ public class ObjectPoolManager : MonoBehaviour {
 	public ObjectPool GunShotx2_AS;
 	public ObjectPool GunShotx3_AS;
 	public ObjectPool GunShotx4_AS;
+	[Space(10)]
+	public ObjectPool SphereBot_AS;
+	public ObjectPool SphereBotHit_AS;
 
 	void Awake () {
 		instance = this;
