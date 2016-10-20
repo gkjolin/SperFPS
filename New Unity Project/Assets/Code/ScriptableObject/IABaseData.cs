@@ -9,6 +9,10 @@ public class IABaseData : ScriptableObject {
 	public GameManager.MobType mobType;
 
 	public int maxLifePoint;
+	public int dropCount;
+	public float coinProbability;
+	public float healProbability;
+	public float speedProbability;
 	public bool canMoveWhileShooting;
 	public float hearing;
 	public Vector2 searchingDistance;

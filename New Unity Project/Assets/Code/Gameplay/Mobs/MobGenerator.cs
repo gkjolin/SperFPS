@@ -59,6 +59,7 @@ public class MobGenerator : MonoBehaviour {
 		iab.SetUpIA();
 
 		baseObject.name = mobName + " LVL" + mobLVL;
+		iab.level = mobLVL;
 	}
 
 	void GetModules(int type, int level)

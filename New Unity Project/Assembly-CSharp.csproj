@@ -52,6 +52,8 @@
      <Compile Include="Assets\Code\Effects\CameraShake.cs" />
      <Compile Include="Assets\Code\Effects\PixelEffect.cs" />
      <Compile Include="Assets\Code\Effects\PostProcess.cs" />
+     <Compile Include="Assets\Code\Gameplay\Collectables\Collectable.cs" />
+     <Compile Include="Assets\Code\Gameplay\Collectables\CollectableGenerator.cs" />
      <Compile Include="Assets\Code\Gameplay\Managers\GameManager.cs" />
      <Compile Include="Assets\Code\Gameplay\Mobs\Damageable.cs" />
      <Compile Include="Assets\Code\Gameplay\Mobs\IABase.cs" />
@@ -85,6 +87,7 @@
      <Compile Include="Assets\Code\Gameplay\Weapon\WeaponModuleCannon.cs" />
      <Compile Include="Assets\Code\Gameplay\Weapon\WeaponModuleMagazine.cs" />
      <Compile Include="Assets\Code\Generic\SpawnUtilities.cs" />
+     <Compile Include="Assets\Code\ScriptableObject\CollectableData.cs" />
      <Compile Include="Assets\Code\ScriptableObject\GenericItemData.cs" />
      <Compile Include="Assets\Code\ScriptableObject\IABaseData.cs" />
      <Compile Include="Assets\Code\ScriptableObject\IAEyeData.cs" />
@@ -104,7 +107,7 @@
      <None Include="Assets\Code\Shader\MyCGInclude.cginc" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
-     <None Include="Assets\Code\Shader\PMaskAddMultiplierDistortion.shader" />
+     <None Include="Assets\Code\Shader\Particles\PMaskAddMultiplierDistortion.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
      <None Include="Assets\Standard Assets\Effects\AntiAliasing\FXAA\Resources\FXAA3.cginc" />
      <None Include="Assets\Code\Shader\Mob.shader" />
@@ -113,12 +116,13 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceAmbientObscurance.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\NFAA.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceRaytrace.cginc" />
+     <None Include="Assets\Code\Shader\Collectable.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
      <None Include="Assets\Code\Shader\UnlitVertexColorMultiplier.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\VignetteShader.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
      <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
-     <None Include="Assets\Code\Shader\PAddMultiplierDistortion.shader" />
+     <None Include="Assets\Code\Shader\Particles\PAddMultiplierDistortion.shader" />
      <None Include="Assets\Standard Assets\Effects\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\MotionBlur.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />
@@ -141,7 +145,7 @@
      <None Include="Assets\Standard Assets\Effects\TonemappingColorGrading\Resources\TonemappingColorGrading.cginc" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
-     <None Include="Assets\Code\Shader\PMaskBlendMultiplierDistortion.shader" />
+     <None Include="Assets\Code\Shader\Particles\PMaskBlendMultiplierDistortion.shader" />
      <None Include="Assets\Standard Assets\Effects\AntiAliasing\SMAA\Resources\SMAA.shader" />
      <None Include="Assets\Code\Shader\PBlendMultiplier.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBlur.shader" />
@@ -193,7 +197,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
      <None Include="Assets\Standard Assets\Effects\DepthOfField\Resources\MedianFilter.shader" />
-     <None Include="Assets\Code\Shader\PBlendMultiplierDistortion.shader" />
+     <None Include="Assets\Code\Shader\Particles\PBlendMultiplierDistortion.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
      <None Include="Assets\Code\Shader\Pixelate.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
@@ -205,14 +209,14 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\Blend.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
      <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
-     <None Include="Assets\Code\Shader\PAddHexaSphere.shader" />
+     <None Include="Assets\Code\Shader\Particles\PAddHexaSphere.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
      <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
      <None Include="Assets\Code\Shader\PostProcess.shader" />
      <None Include="Assets\Standard Assets\Effects\LensAberrations\Resources\LensAberrations.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
      <None Include="Assets\Standard Assets\Effects\TonemappingColorGrading\Resources\HistogramCompute.compute" />
-     <None Include="Assets\Code\Shader\PAddMultiplier.shader" />
+     <None Include="Assets\Code\Shader\Particles\PAddMultiplier.shader" />
      <None Include="Assets\Code\Shader\EnvUnlit.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />

@@ -62,7 +62,7 @@ public class GenericItem : MonoBehaviour {
 	public virtual void Drop(float force, float torque)
 	{
 		GameObject dropGO = ObjectPoolManager.instance.Drop01_AS.GetCurrentPooledGameObject();
-		SpawnUtilities.instance.SetAudio(dropGO, trsf, false);
+		SpawnUtilities.instance.SetGOPosition(dropGO, trsf, false);
 		StopAllCoroutines();
 		inHand = false;
 		UpdateUI(true);

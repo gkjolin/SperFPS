@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour {
 	public Text magazineLeft;
 	public Text magazineRight;
 	public Text lifePoints;
+	public Text coins;
 	public Text frameRate;
 	public Text weaponLeft;
 	public Text weaponRight;
@@ -54,7 +55,7 @@ public class UIManager : MonoBehaviour {
 			}
 			else
 			{
-				magazineRight.text = currentMagazine + " / " + magazine;
+				magazineRight.text = currentMagazine.ToString();
 			}
 		}
 		else
@@ -65,14 +66,14 @@ public class UIManager : MonoBehaviour {
 			}
 			else
 			{
-				magazineLeft.text = currentMagazine + " / " + magazine;
+				magazineLeft.text = currentMagazine.ToString();
 			}
 		}
 	}
 
 	public void UpdateLife()
 	{
-		lifePoints.text = player.damageable.lifePoint + " / " + player.damageable.maxLifePoint;
+		lifePoints.text = player.damageable.lifePoint.ToString();
 	}
 
 	public void UpdateWeapon(string weaponName, bool rightHand, bool empty)
@@ -99,5 +100,10 @@ public class UIManager : MonoBehaviour {
 				weaponLeft.text = weaponName;
 			}
 		}
+	}
+
+	public void UpdateCoins()
+	{
+		coins.text = player.playerCoins.ToString();
 	}
 }

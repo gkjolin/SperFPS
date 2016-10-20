@@ -149,7 +149,7 @@ public class ProjectileMovement : MonoBehaviour {
 			}
 
 			//FXs/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-			SpawnUtilities.instance.SetFx(impactFx, hit.collider.transform, hit.point, hit.normal, false);
+			SpawnUtilities.instance.SetGOPositionAndDirection(impactFx, hit.collider.transform, hit.point, hit.normal, false);
 		}
 	}
 

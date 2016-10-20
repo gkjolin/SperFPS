@@ -9,8 +9,13 @@ public class PlayerMove : MonoBehaviour {
 	public float airControl;
 	public float limitAirSpeed;
 	public Transform head;
-	public float playerEquipmentWeightInfluence;
+	public float playerEquipmentWeightInfluence; 
+	public float speedBoost;
+	public float boostDuration;
+	public float boostDecreaseSpeed;
 
+	[HideInInspector]
+	public float actualSpeed;
 	[HideInInspector]
 	public bool moving;
 	[HideInInspector]
@@ -27,6 +32,7 @@ public class PlayerMove : MonoBehaviour {
 	private Vector3 moveDirection = new Vector3(0.0f,0.0f,0.0f);
 	private float jump;
 	private float equipmentWeight;
+	private Coroutine lastCoroutine = null;
 
 	void Awake () {
 		rgdBody = GetComponent<Rigidbody>();
@@ -34,10 +40,10 @@ public class PlayerMove : MonoBehaviour {
 		jumping = false;
 		stuned = false;
 		SetEquipmentWeight();
+		actualSpeed = speed;
 	}
 
 	void Update () {
-
 		if(Input.GetAxis("Vertical") != 0.0f && checkGround.grounded == true)
 		{
 			moving = true;
@@ -70,6 +76,33 @@ public class PlayerMove : MonoBehaviour {
 		}
 	}
 
+	public void Boost()
+	{
+		if(lastCoroutine != null)
+		{
+			StopCoroutine(lastCoroutine);
+		}
+		lastCoroutine = StartCoroutine(boostCoroutine());
+	}
+
+	IEnumerator boostCoroutine()
+	{
+		actualSpeed = speed + speedBoost;
+
+		yield return new WaitForSeconds(boostDuration);
+
+		WaitForEndOfFrame wait = new WaitForEndOfFrame();
+		float value = 1.0f;
+		while(value > 0.0f)
+		{
+			value -= Time.deltaTime*boostDecreaseSpeed;
+			actualSpeed = speed + speedBoost*value;
+			yield return wait;
+		}
+
+		actualSpeed = speed;
+	}
+
 	IEnumerator WaitForJump()
 	{
 		jumping = true;
@@ -81,7 +114,7 @@ public class PlayerMove : MonoBehaviour {
 	{
 		if(checkGround.grounded)
 		{
-			rgdBody.velocity = new Vector3(moveDirection.x*speed, rgdBody.velocity.y, moveDirection.z*(speed/equipmentWeight));
+			rgdBody.velocity = new Vector3(moveDirection.x*actualSpeed, rgdBody.velocity.y, moveDirection.z*(actualSpeed/equipmentWeight));
 		}
 		else
 		{

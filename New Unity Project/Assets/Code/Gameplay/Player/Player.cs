@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
 	public float stunDuration;
 	public float deathForce;
 	public float hitWhileJumpingForce;
+	public int playerStartingCoins;
 	public AnimationCurve stunCurve;
 	public Transform respawnPoint;
 	public Transform head;
@@ -23,6 +24,8 @@ public class Player : MonoBehaviour {
 	[HideInInspector]
 	public float playerEquipmentWeight;
 	[HideInInspector]
+	public int playerCoins;
+	[HideInInspector]
 	public GenericItem[] genericItems;
 	[HideInInspector]
 	public bool isAlive;
@@ -34,12 +37,15 @@ public class Player : MonoBehaviour {
 			weaponInputs[i].player = this;
 		}
 		isAlive = true;
+
+		playerCoins = playerStartingCoins;
 	}
 
 	void Start()
 	{
 		UIManager.instance.Clear();
 		UIManager.instance.UpdateLife();
+		UIManager.instance.UpdateCoins();
 	}
 
 	void Update()
@@ -153,5 +159,29 @@ public class Player : MonoBehaviour {
 		rgdBody.freezeRotation = b;
 		playerMove.enabled = b;
 		mouseLook.enabled = b;
+	}
+
+	void OnCollisionEnter(Collision c)
+	{
+		if(c.gameObject.layer == LayerMask.NameToLayer("Collectable"))
+		{
+			Collectable collectable = c.gameObject.GetComponent<Collectable>();
+			if((int)collectable.data.collectableType == 0)
+			{
+				playerCoins += 1;
+				UIManager.instance.UpdateCoins();
+			}
+			else if((int)collectable.data.collectableType == 1)
+			{
+				damageable.Heal(1);
+				UIManager.instance.UpdateLife();
+			}
+			else if((int)collectable.data.collectableType == 2)
+			{
+				playerMove.Boost();
+			}
+
+			collectable.grab();
+		}
 	}
 }

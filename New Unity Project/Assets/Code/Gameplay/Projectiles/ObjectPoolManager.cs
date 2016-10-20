@@ -4,6 +4,11 @@ using System.Collections;
 public class ObjectPoolManager : MonoBehaviour {
 
 	public static ObjectPoolManager instance;
+	public ObjectPool coin;
+	public ObjectPool heal;
+	public ObjectPool speed;
+	[Space(20)]
+
 	public ObjectPool gun;
 	public ObjectPool dart;
 	public ObjectPool laser;

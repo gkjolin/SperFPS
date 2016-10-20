@@ -23,6 +23,8 @@ public class IABase : MonoBehaviour {
 	public Vector3 lastKnownPosition;
 	[HideInInspector]
 	public bool detected;
+	[HideInInspector]
+	public int level;
 
 	private IAActions iaActions;
 	private IAEye[] eyes;
@@ -34,6 +36,7 @@ public class IABase : MonoBehaviour {
 	private IABody iaBody;
 	private IAWeapon[] iaWeapons;
 	private Renderer[] renderers;
+	private CollectableGenerator collectableGenerator;
 	private Vector3 searchPosition;
 	private bool goingToSearchPosition;
 	private bool strafing;
@@ -90,6 +93,7 @@ public class IABase : MonoBehaviour {
 		damageable.maxLifePoint = data.maxLifePoint;
 
 		moveSoundSource = GetComponent<AudioSource>();
+		collectableGenerator = GetComponent<CollectableGenerator>();
 		target = players[0].iaTarget;
 		iaBody.target = target;
 
@@ -112,7 +116,7 @@ public class IABase : MonoBehaviour {
 			if(damageable.takeDamage == true)
 			{
 				GameObject hitSound = hitSoundPool.GetCurrentPooledGameObject();
-				SpawnUtilities.instance.SetAudio(hitSound, trsf, true);
+				SpawnUtilities.instance.SetGOPosition(hitSound, trsf, true);
 
 				if(data.stunDuration*damageable.stuning > 0.0f)
 				{
@@ -190,7 +194,7 @@ public class IABase : MonoBehaviour {
 			if(detectedSound == false)
 			{
 				GameObject dSound = detectedSoundPool.GetCurrentPooledGameObject();
-				SpawnUtilities.instance.SetAudio(dSound, trsf, true);
+				SpawnUtilities.instance.SetGOPosition(dSound, trsf, true);
 				detectedSound = true;
 			}
 		}
@@ -207,7 +211,7 @@ public class IABase : MonoBehaviour {
 					if(detectedSound == false)
 					{
 						GameObject dSound = detectedSoundPool.GetCurrentPooledGameObject();
-						SpawnUtilities.instance.SetAudio(dSound, trsf, true);
+						SpawnUtilities.instance.SetGOPosition(dSound, trsf, true);
 						detectedSound = true;
 					}
 					break;
@@ -378,7 +382,7 @@ public class IABase : MonoBehaviour {
 		rgdBody.AddTorque(Vector3.Cross(damageable.damageDirection + Random.insideUnitSphere, Vector3.up)*-force, ForceMode.VelocityChange);
 
 		GameObject deathParticle = deathPool.GetCurrentPooledGameObject();
-		SpawnUtilities.instance.SetFx(deathParticle, trsf, trsf.position, trsf.forward, true);
+		SpawnUtilities.instance.SetGOPositionAndDirection(deathParticle, trsf, trsf.position, trsf.forward, true);
 
 		yield return new WaitForSeconds(data.deathDuration);
 
@@ -395,6 +399,7 @@ public class IABase : MonoBehaviour {
 			}
 		}
 
+		collectableGenerator.SpawnCollectables(data.dropCount*level, data.coinProbability, data.healProbability, data.speedProbability);
 		gameObject.SetActive(false);
 	}
 
@@ -410,7 +415,7 @@ public class IABase : MonoBehaviour {
 		ResetVariables();
 
 		GameObject spawnParticle = spawnPool.GetCurrentPooledGameObject();
-		SpawnUtilities.instance.SetFx(spawnParticle, trsf, trsf.position, trsf.forward, true);
+		SpawnUtilities.instance.SetGOPositionAndDirection(spawnParticle, trsf, trsf.position, trsf.forward, true);
 
 		yield return new WaitForSeconds(data.spawnDuration);
 		SetUpComponents(true);

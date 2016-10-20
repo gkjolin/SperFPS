@@ -10,7 +10,7 @@ public class SpawnUtilities : MonoBehaviour {
 		instance = this;
 	}
 
-	public void SetFx(GameObject go, Transform t, Vector3 position, Vector3 direction, bool setParent)
+	public void SetGOPositionAndDirection(GameObject go, Transform t, Vector3 position, Vector3 direction, bool setParent)
 	{
 		if(go)
 		{
@@ -24,11 +24,11 @@ public class SpawnUtilities : MonoBehaviour {
 		}
 		else
 		{
-			Debug.Log("Need More fx!");
+			Debug.Log("Need More go!(Probably fx or projectile)");
 		}
 	}
 
-	public void SetAudio(GameObject go, Transform t, bool setParent)
+	public void SetGOPosition(GameObject go, Transform t, bool setParent)
 	{
 		if(go)
 		{
@@ -41,7 +41,7 @@ public class SpawnUtilities : MonoBehaviour {
 		}
 		else
 		{
-			Debug.Log("Need More audio!");
+			Debug.Log("Need More go!(Probably audio or collectable)");
 		}
 	}
 }

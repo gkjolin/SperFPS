@@ -87,7 +87,7 @@ public class PlayerSound : MonoBehaviour {
 		}
 
 		switchStep = !switchStep;
-		yield return new WaitForSeconds(stepFrequency);
+		yield return new WaitForSeconds(stepFrequency/playerMove.actualSpeed);
 		playingStepSound = false;
 	}
 
