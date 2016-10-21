@@ -1,10 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Audio\PlayerSound.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Gameplay\Weapon\GenericWeapon.cs">
     <Files>
-      <File FileName="Assets\Code\Gameplay\Player\PlayerMove.cs" Line="17" Column="19" />
-      <File FileName="Assets\Code\Gameplay\Player\Player.cs" Line="181" Column="24" />
-      <File FileName="Assets\Code\Audio\PlayerSound.cs" Line="62" Column="65" />
+      <File FileName="Assets\Code\Gameplay\Player\Player.cs" Line="153" Column="3" />
+      <File FileName="Assets\Code\Effects\PostProcess.cs" Line="203" Column="3" />
+      <File FileName="Assets\Code\Shader\PostProcess.shader" Line="71" Column="5" />
+      <File FileName="Assets\Code\Audio\PlayerSound.cs" Line="29" Column="55" />
+      <File FileName="Assets\Code\Gameplay\Weapon\GenericWeapon.cs" Line="33" Column="49" />
+      <File FileName="Assets\Code\Gameplay\Weapon\GenericWeaponTester.cs" Line="33" Column="132" />
+      <File FileName="Assets\Code\Gameplay\Weapon\WeaponModuleMagazine.cs" Line="4" Column="1" />
+      <File FileName="Assets\Code\Gameplay\Mobs\IAEye.cs" Line="29" Column="1" />
+      <File FileName="Assets\Code\Gameplay\Managers\GameManager.cs" Line="35" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

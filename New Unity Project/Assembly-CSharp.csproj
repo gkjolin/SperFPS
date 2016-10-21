@@ -78,6 +78,7 @@
      <Compile Include="Assets\Code\Gameplay\Projectiles\ProjectileRgdBodyMovement.cs" />
      <Compile Include="Assets\Code\Gameplay\Weapon\GenericItem.cs" />
      <Compile Include="Assets\Code\Gameplay\Weapon\GenericWeapon.cs" />
+     <Compile Include="Assets\Code\Gameplay\Weapon\GenericWeaponTester.cs" />
      <Compile Include="Assets\Code\Gameplay\Weapon\GrabZone.cs" />
      <Compile Include="Assets\Code\Gameplay\Weapon\HandMovement.cs" />
      <Compile Include="Assets\Code\Gameplay\Weapon\ThrowingDamage.cs" />

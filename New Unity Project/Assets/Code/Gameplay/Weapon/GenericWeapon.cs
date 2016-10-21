@@ -28,8 +28,9 @@ public class GenericWeapon : GenericItem {
 		cameraShake = GameObject.FindObjectOfType<CameraShake>() as CameraShake;
 		rgdBody.mass = weaponModuleBase.data.mass + weaponModuleMagazine.data.mass + weaponModuleCannon.data.mass * weaponModuleCannon.cannons.Length;
 
-		rate1 = weaponModuleBase.data.rafaleRate*weaponModuleMagazine.data.fireRateLimiter;
-		rate2 = weaponModuleBase.data.fireRate*weaponModuleMagazine.data.fireRateLimiter*(1.0f + (weaponModuleCannon.cannons.Length-1.0f)*weaponModuleCannon.data.multiCannonFireRateLimiter);
+		float limiter = weaponModuleMagazine.data.fireRateLimiter*(1.0f + (weaponModuleCannon.cannons.Length-1.0f)*weaponModuleCannon.data.multiCannonFireRateLimiter);
+		rate1 = weaponModuleBase.data.rafaleRate*limiter;
+		rate2 = weaponModuleBase.data.fireRate*limiter;
 
 		dps = CalculateDps();
 	}

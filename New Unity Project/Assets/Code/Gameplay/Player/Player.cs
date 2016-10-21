@@ -50,11 +50,9 @@ public class Player : MonoBehaviour {
 
 	void Update()
 	{
-		if(Input.GetKey(KeyCode.P))
+		if(Input.GetKey(KeyCode.P) && postProcess.deathEffectFinished == true)
 		{
 			Respawn();
-			damageable.lifePoint = damageable.maxLifePoint;
-			damageable.dead = false;
 		}
 
 		if(damageable.dead == true && isAlive == true)
@@ -81,11 +79,17 @@ public class Player : MonoBehaviour {
 			damageable.takeDamage = false;
 			UIManager.instance.UpdateLife();
 
-			postProcess.StopAllCoroutines();
+			if(postProcess.deathEffectFinished == true)
+			{
+				postProcess.StopAllCoroutines();
+			}
+
 			postProcess.hitPosition = damageable.damagePosition;
 			postProcess.StartCoroutine("HitEffect");
 			playerSound.PlayHitSound(damageable.damagePosition);
 		}
+
+		postProcess.speedEffect = (playerMove.actualSpeed - playerMove.speed)/playerMove.speedBoost;
 	}
 
 	public void GetItems()
@@ -121,6 +125,7 @@ public class Player : MonoBehaviour {
 
 	void Death()
 	{
+		postProcess.StartCoroutine("DeathEffect");
 		SetUpComponents(false);
 		rgdBody.AddForceAtPosition(damageable.pushBack*damageable.damageDirection*deathForce, damageable.damagePosition, ForceMode.VelocityChange);
 
@@ -132,6 +137,7 @@ public class Player : MonoBehaviour {
 
 	void Respawn()
 	{
+		postProcess.StartCoroutine("RespawnEffect");
 		isAlive = true;
 		rgdBody.velocity = Vector3.zero;
 		rgdBody.angularVelocity = Vector3.zero;
@@ -141,6 +147,9 @@ public class Player : MonoBehaviour {
 
 		coll.material.dynamicFriction = 0.0f;
 		coll.material.staticFriction = 0.0f;
+
+		damageable.lifePoint = damageable.maxLifePoint;
+		damageable.dead = false;
 
 		UIManager.instance.UpdateLife();
 	}
@@ -169,16 +178,19 @@ public class Player : MonoBehaviour {
 			if((int)collectable.data.collectableType == 0)
 			{
 				playerCoins += 1;
+				playerSound.PlayCollectableSound(0);
 				UIManager.instance.UpdateCoins();
 			}
 			else if((int)collectable.data.collectableType == 1)
 			{
 				damageable.Heal(1);
+				playerSound.PlayCollectableSound(1);
 				UIManager.instance.UpdateLife();
 			}
 			else if((int)collectable.data.collectableType == 2)
 			{
 				playerMove.Boost();
+				playerSound.PlayCollectableSound(2);
 			}
 
 			collectable.grab();

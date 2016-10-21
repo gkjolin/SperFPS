@@ -9,8 +9,10 @@ public class PlayerSound : MonoBehaviour {
 	public AudioSource landSound;
 	public AudioSource movingSound;
 	public AudioSource hitSound;
+	public AudioSource[] collectableSounds;
 	public Rigidbody rgdBody;
 	public PlayerMove playerMove;
+	public Player player;
 	public float movingSoundVolume;
 	public float movingSoundPitch;
 	public float stepFrequency;
@@ -24,6 +26,7 @@ public class PlayerSound : MonoBehaviour {
 	private SoundRandomizer jumpSoundRandomizer;
 	private SoundRandomizer landSoundRandomizer;
 	private SoundRandomizer hitSoundRandomizer;
+	private SoundRandomizer[] collectableSoundRandomizers;
 
 	void Awake()
 	{
@@ -32,12 +35,17 @@ public class PlayerSound : MonoBehaviour {
 		jumpSoundRandomizer = jumpSound.GetComponent<SoundRandomizer>();
 		landSoundRandomizer = landSound.GetComponent<SoundRandomizer>();
 		hitSoundRandomizer = hitSound.GetComponent<SoundRandomizer>();
+		collectableSoundRandomizers = new SoundRandomizer[collectableSounds.Length];
+		for(int i = 0; i < collectableSounds.Length; i++)
+		{
+			collectableSoundRandomizers[i] = collectableSounds[i].GetComponent<SoundRandomizer>();
+		}
 
 		stepFrequency *= Mathf.PI;
 	}
 
 	void Update () {
-		if(playerMove.moving == true && playingStepSound == false)
+		if(playerMove.moving == true && playingStepSound == false && player.isAlive == true)
 		{
 			StartCoroutine(stepSoundCoroutine());
 		}
@@ -69,6 +77,12 @@ public class PlayerSound : MonoBehaviour {
 		hitSoundRandomizer.Randomize();
 		hitSound.transform.position = p;
 		hitSound.Play();
+	}
+
+	public void PlayCollectableSound(int i)
+	{
+		collectableSoundRandomizers[i].Randomize();
+		collectableSounds[i].Play();
 	}
 
 	IEnumerator stepSoundCoroutine()

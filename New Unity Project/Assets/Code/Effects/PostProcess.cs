@@ -13,6 +13,9 @@ public class PostProcess : MonoBehaviour
 	public float hitDistortion;
 	public AnimationCurve hitEffectCurve;
 	public AnimationCurve hitAlphaCurve;
+	public float deathDuration;
+	public AnimationCurve deathEffectCurve;
+	public Color speedColor;
 	public Texture2D noise;
 	public Vector4 noiseParams;
 	public bool pixelate;
@@ -22,6 +25,10 @@ public class PostProcess : MonoBehaviour
 
 	[HideInInspector]
 	public Vector3 hitPosition;
+	[HideInInspector]
+	public float speedEffect;
+	[HideInInspector]
+	public bool deathEffectFinished;
 
 	private Transform trsf;
 	private Camera cam;
@@ -60,6 +67,8 @@ public class PostProcess : MonoBehaviour
 
 		SetMaterial();
 		material.SetFloat("_HitRadius", 0.0f);
+
+		deathEffectFinished = true;
 	}
 
 	void SetMaterial()
@@ -72,6 +81,7 @@ public class PostProcess : MonoBehaviour
 		material.SetColor("_VignetColor", vignetColor);
 		material.SetTexture("_Noise", noise);
 		material.SetVector("_NoiseParams", noiseParams);
+		material.SetColor("_SpeedColor", speedColor);
 	}
 
 	void OnRenderImage (RenderTexture source, RenderTexture destination) 
@@ -80,6 +90,8 @@ public class PostProcess : MonoBehaviour
 		{
 			SetMaterial();
 		}
+
+		material.SetFloat("_SpeedEffect", speedEffect);
 
 		if(pixelate)
 		{
@@ -160,6 +172,46 @@ public class PostProcess : MonoBehaviour
 
 		material.SetFloat("_HitRadius", 0.0f);
 		material.SetColor("_HitColor", new Color(0.0f, 0.0f, 0.0f, 0.0f));
+	}
+
+	public IEnumerator DeathEffect()
+	{
+		Debug.Log("start");
+		deathEffectFinished = false;
+		WaitForEndOfFrame wait = new WaitForEndOfFrame();
+		float value = 0.0f;
+
+		while(value < deathDuration)
+		{
+			ReconstructCamera();
+			float ev = deathEffectCurve.Evaluate(value/deathDuration);
+			material.SetFloat("_Death", ev);
+			value += Time.deltaTime;
+			yield return wait;
+		}
+
+		material.SetFloat("_Death", 1.0f);
+		deathEffectFinished = true;
+		Debug.Log("end");
+	}
+
+	public IEnumerator RespawnEffect()
+	{
+		deathEffectFinished = false;
+		WaitForEndOfFrame wait = new WaitForEndOfFrame();
+		float value = deathDuration;
+
+		while(value > 0.0f)
+		{
+			ReconstructCamera();
+			float ev = deathEffectCurve.Evaluate(value/deathDuration);
+			material.SetFloat("_Death", ev);
+			value -= Time.deltaTime;
+			yield return wait;
+		}
+
+		material.SetFloat("_Death", 0.0f);
+		deathEffectFinished = true;
 	}
 		
 }
