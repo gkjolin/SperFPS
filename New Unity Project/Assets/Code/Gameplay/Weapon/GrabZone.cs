@@ -66,6 +66,12 @@ public class GrabZone : MonoBehaviour {
 		}
 	}
 
+	public void AddToList(GenericInteractable gi)
+	{
+		colliders.Add(gi.grabCollider);
+		genericInteractables.Add(gi);
+	}
+
 	void OnTriggerStay()
 	{
 		TestDistanceToPlayer();

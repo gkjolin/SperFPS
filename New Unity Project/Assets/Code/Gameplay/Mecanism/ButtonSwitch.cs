@@ -18,6 +18,8 @@ public class ButtonSwitch : MonoBehaviour {
 
 	[HideInInspector]
 	public bool onOff;
+	[HideInInspector]
+	public bool interacting;
 
 	private Transform trsf;
 	private Vector3 startPos;
@@ -40,6 +42,7 @@ public class ButtonSwitch : MonoBehaviour {
 		sharedMaterial = rdr.sharedMaterial;
 		SetMaterial();
 		highLightSystem = GetComponent<HighLightSystem>();
+		interacting = false;
 	}
 
 	public void Switch()
@@ -76,7 +79,7 @@ public class ButtonSwitch : MonoBehaviour {
 
 		if(continuous)
 		{
-			while(Input.GetMouseButton(2))
+			while(interacting)
 			{
 				yield return wait;
 			}

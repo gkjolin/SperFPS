@@ -81,21 +81,20 @@ public class WeaponInput : MonoBehaviour {
 
 	void Grab()
 	{
-		currentGenericItem = grabZone.grabableItem.GetComponent<GenericItem>();
-		if(currentGenericItem && currentGenericItem.inHand == false)
+		if(grabZone.grabableItem != null)
 		{
-			grabZone.RemoveFromLists(currentGenericItem);
-			SetCurrentGenericItem();
+			currentGenericItem = grabZone.grabableItem.GetComponent<GenericItem>();
+			if(currentGenericItem && currentGenericItem.inHand == false)
+			{
+				grabZone.RemoveFromLists(currentGenericItem);
+				SetCurrentGenericItem();
+			}
 		}
-	}
-
-	void Interract()
-	{
-		
 	}
 
 	public void Drop()
 	{
+		grabZone.AddToList(currentGenericItem);
 		currentGenericItem.Drop(dropForce*(1.0f + Vector3.Dot(player.playerMove.rgdBody.velocity, trsf.forward)*moveDropForce), dropTorque);
 		player.GetItems();
 	}

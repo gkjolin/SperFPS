@@ -4,6 +4,7 @@ using System.Collections;
 public class InteractableInput : MonoBehaviour {
 
 	private GrabZone grabZone;
+	private ButtonSwitch buttonSwitch;
 
 	void Awake()
 	{
@@ -11,15 +12,36 @@ public class InteractableInput : MonoBehaviour {
 	}
 
 	void Update () {
-		if(Input.GetMouseButtonDown(2))
+		if(Input.GetMouseButton(2))
 		{
 			if(grabZone.grabableItem != null)
 			{
-				ButtonSwitch buttonSwitch = grabZone.grabableItem.GetComponent<ButtonSwitch>();
+				if(buttonSwitch == null)
+				{
+					buttonSwitch = grabZone.grabableItem.GetComponent<ButtonSwitch>();
+				}
 				if(buttonSwitch)
 				{
+					buttonSwitch.interacting = true;
 					buttonSwitch.Switch();
 				}
+			}
+			else
+			{
+				if(buttonSwitch)
+				{
+					buttonSwitch.interacting = false;
+					buttonSwitch = null;
+				}
+			}
+		}
+
+		if(Input.GetMouseButtonUp(2))
+		{
+			if(buttonSwitch)
+			{
+				buttonSwitch.interacting = false;
+				buttonSwitch = null;
 			}
 		}
 	}

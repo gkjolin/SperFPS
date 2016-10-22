@@ -2,10 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Gameplay\Mecanism\ButtonSwitch.cs">
     <Files>
-      <File FileName="Assets\Code\Gameplay\Mecanism\ButtonSwitch.cs" Line="82" Column="5" />
-      <File FileName="Assets\Code\Gameplay\Weapon\WeaponInput.cs" Line="24" Column="1" />
-      <File FileName="Assets\Code\Gameplay\Mecanism\InteractableInput.cs" Line="14" Column="6" />
-      <File FileName="Assets\Code\Effects\PostProcess.cs" Line="197" Column="30" />
+      <File FileName="Assets\Code\Gameplay\Mecanism\ButtonSwitch.cs" Line="22" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
