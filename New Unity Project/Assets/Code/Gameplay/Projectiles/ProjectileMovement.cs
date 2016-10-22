@@ -33,7 +33,7 @@ public class ProjectileMovement : MonoBehaviour {
 		StartCoroutine(DisableAfterDelay());
 	}
 
-	void FixedUpdate()
+	void Update()
 	{
 		if(initialForce == true)
 		{

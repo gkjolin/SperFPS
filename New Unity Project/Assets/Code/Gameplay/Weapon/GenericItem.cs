@@ -21,12 +21,13 @@ public class GenericItem : MonoBehaviour {
 	public Collider grabCollider;
 	[HideInInspector]
 	public Transform parent;
+	[HideInInspector]
+	public HighLightSystem highLightSystem;
 
 	protected Transform trsf;
 
 	protected Rigidbody rgdBody;
 	private Collider[] colls;
-	private Renderer[] renderers;
 	private Material sharedMaterial;
 
 	public virtual void SetUpItem()
@@ -34,8 +35,10 @@ public class GenericItem : MonoBehaviour {
 		trsf = transform;
 		rgdBody = GetComponent<Rigidbody>();
 		colls = GetComponentsInChildren<Collider>();
-		renderers = GetComponentsInChildren<Renderer>();
-		sharedMaterial = renderers[0].sharedMaterial;
+		highLightSystem = GetComponent<HighLightSystem>();
+		highLightSystem.SetUp();
+		highLightSystem.material = genericItemData.hightLightMaterial;
+
 		inHand = false;
 
 		for(int i = 0; i < colls.Length; i++)
@@ -78,9 +81,9 @@ public class GenericItem : MonoBehaviour {
 
 	public virtual void Take(WeaponInput w)
 	{
+		highLightSystem.hightLight = false;
 		inHand = true;
 		SetPhysics(inHand);
-		SetRenderers(false);
 		weaponInput = w;
 		trsf.SetParent(w.transform);
 		SetPhysics(inHand);
@@ -99,24 +102,6 @@ public class GenericItem : MonoBehaviour {
 		for(int i = 0; i < colls.Length; i++)
 		{
 			colls[i].enabled = !b;
-		}
-	}
-
-	public void SetRenderers(bool grab)
-	{
-		if(grab)
-		{
-			for(int i = 0; i < renderers.Length; i++)
-			{
-				renderers[i].material = genericItemData.hightLightMaterial;
-			}
-		}
-		else
-		{
-			for(int i = 0; i < renderers.Length; i++)
-			{
-				renderers[i].material = sharedMaterial;
-			}
 		}
 	}
 

@@ -45,7 +45,7 @@ public class PlayerSound : MonoBehaviour {
 	}
 
 	void Update () {
-		if(playerMove.moving == true && playingStepSound == false && player.isAlive == true)
+		if(playerMove.moving == true && playingStepSound == false)
 		{
 			StartCoroutine(stepSoundCoroutine());
 		}

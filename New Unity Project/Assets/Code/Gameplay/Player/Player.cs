@@ -168,6 +168,7 @@ public class Player : MonoBehaviour {
 		rgdBody.freezeRotation = b;
 		playerMove.enabled = b;
 		mouseLook.enabled = b;
+		playerSound.enabled = b;
 	}
 
 	void OnCollisionEnter(Collision c)

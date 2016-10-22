@@ -81,7 +81,7 @@
 				fixed colDistB= tex2D(_MainTex, i.uv + noise.z*dist).b;
 
 				fixed nb = (colDistR + colDistG + colDistB)/3.0;
-				fixed4 col = lerp(half4(colDistR, colDistG, colDistB, 0.0), half4(nb*nb, 0.0, 0.0, 0.0), _Death)*vignet;
+				fixed4 col = lerp(half4(colDistR, colDistG, colDistB, 0.0), half4(nb, 0.0, 0.0, 0.0), _Death)*vignet;
 				fixed4 hitEffect = (hit*0.5+v)*_HitColor*_HitColor.a;
 				fixed4 speedEffect = v*_SpeedColor*_SpeedEffect;
 

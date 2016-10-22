@@ -37,9 +37,10 @@ public class GrabZone : MonoBehaviour {
 			colliders.Remove(c);
 
 			GenericItem gi = c.GetComponentInParent<GenericItem>();
+
 			if(gi && genericItems.Contains(gi))
 			{
-				gi.SetRenderers(false);
+				gi.highLightSystem.hightLight = false;
 				genericItems.Remove(gi);
 				if(grabableItem == gi)
 				{
@@ -77,7 +78,7 @@ public class GrabZone : MonoBehaviour {
 
 		for(int i = 0; i < genericItems.Count; i++)
 		{
-			genericItems[i].SetRenderers(false);
+			genericItems[i].highLightSystem.hightLight = false;
 			Vector3 d2p = genericItems[i].transform.position - playerHead.position;
 			float d = Vector3.Cross(ray.direction, d2p).sqrMagnitude*d2p.sqrMagnitude;
 			if(d < minDist)
@@ -87,6 +88,6 @@ public class GrabZone : MonoBehaviour {
 			}
 		}
 
-		grabableItem.SetRenderers(true);
+		grabableItem.highLightSystem.hightLight = true;
 	}
 }

@@ -50,6 +50,7 @@
      <Compile Include="Assets\Code\Audio\SoundObjectDeactivation.cs" />
      <Compile Include="Assets\Code\Audio\SoundRandomizer.cs" />
      <Compile Include="Assets\Code\Effects\CameraShake.cs" />
+     <Compile Include="Assets\Code\Effects\HighLightSystem.cs" />
      <Compile Include="Assets\Code\Effects\PixelEffect.cs" />
      <Compile Include="Assets\Code\Effects\PostProcess.cs" />
      <Compile Include="Assets\Code\Gameplay\Collectables\Collectable.cs" />
@@ -110,6 +111,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
      <None Include="Assets\Code\Shader\Particles\PMaskAddMultiplierDistortion.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
+     <None Include="Assets\Code\Shader\HighLight.shader" />
      <None Include="Assets\Standard Assets\Effects\AntiAliasing\FXAA\Resources\FXAA3.cginc" />
      <None Include="Assets\Code\Shader\Mob.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SunShaftsComposite.shader" />
