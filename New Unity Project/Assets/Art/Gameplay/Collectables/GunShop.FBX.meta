@@ -14,6 +14,7 @@ ModelImporter:
     100012: GunShop_PriceDown
     100014: GunShop_PriceUp
     100016: GunShop_Screen
+    100018: GunShop_Sign
     400000: Box003
     400002: Box004
     400004: Cylinder001
@@ -23,6 +24,7 @@ ModelImporter:
     400012: GunShop_PriceDown
     400014: GunShop_PriceUp
     400016: GunShop_Screen
+    400018: GunShop_Sign
     2300000: Box003
     2300002: Box004
     2300004: Cylinder001
@@ -32,6 +34,7 @@ ModelImporter:
     2300012: GunShop_PriceDown
     2300014: GunShop_PriceUp
     2300016: GunShop_Screen
+    2300018: GunShop_Sign
     3300000: Box003
     3300002: Box004
     3300004: Cylinder001
@@ -41,6 +44,7 @@ ModelImporter:
     3300012: GunShop_PriceDown
     3300014: GunShop_PriceUp
     3300016: GunShop_Screen
+    3300018: GunShop_Sign
     4300000: GunShop
     4300002: Box004
     4300004: Cylinder001
@@ -50,6 +54,7 @@ ModelImporter:
     4300012: GunShop_Buy
     4300014: GunShop_PriceUp
     4300016: GunShop_Screen
+    4300018: GunShop_Sign
   materials:
     importMaterials: 1
     materialName: 0

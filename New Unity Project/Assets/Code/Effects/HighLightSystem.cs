@@ -19,7 +19,7 @@ public class HighLightSystem : MonoBehaviour {
 		{
 			for(int i = 0; i < meshfilters.Length; i++)
 			{
-				Graphics.DrawMesh(meshfilters[i].mesh, meshfilters[i].transform.position, meshfilters[i].transform.rotation, material, 0);
+				Graphics.DrawMesh(meshfilters[i].mesh, meshfilters[i].transform.position, meshfilters[i].transform.rotation, material, 14, GameManager.instance.highLightCamera, 0);
 			}
 		}
 	}

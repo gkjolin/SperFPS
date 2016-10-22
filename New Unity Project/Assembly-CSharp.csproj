@@ -49,6 +49,7 @@
      <Compile Include="Assets\Code\Audio\SoundManager.cs" />
      <Compile Include="Assets\Code\Audio\SoundObjectDeactivation.cs" />
      <Compile Include="Assets\Code\Audio\SoundRandomizer.cs" />
+     <Compile Include="Assets\Code\Effects\CameraRenderToTexture.cs" />
      <Compile Include="Assets\Code\Effects\CameraShake.cs" />
      <Compile Include="Assets\Code\Effects\HighLightSystem.cs" />
      <Compile Include="Assets\Code\Effects\PixelEffect.cs" />
@@ -56,6 +57,8 @@
      <Compile Include="Assets\Code\Gameplay\Collectables\Collectable.cs" />
      <Compile Include="Assets\Code\Gameplay\Collectables\CollectableGenerator.cs" />
      <Compile Include="Assets\Code\Gameplay\Managers\GameManager.cs" />
+     <Compile Include="Assets\Code\Gameplay\Mecanism\ButtonSwitch.cs" />
+     <Compile Include="Assets\Code\Gameplay\Mecanism\InteractableInput.cs" />
      <Compile Include="Assets\Code\Gameplay\Mobs\Damageable.cs" />
      <Compile Include="Assets\Code\Gameplay\Mobs\IABase.cs" />
      <Compile Include="Assets\Code\Gameplay\Mobs\IABody.cs" />
@@ -88,6 +91,7 @@
      <Compile Include="Assets\Code\Gameplay\Weapon\WeaponModuleBase.cs" />
      <Compile Include="Assets\Code\Gameplay\Weapon\WeaponModuleCannon.cs" />
      <Compile Include="Assets\Code\Gameplay\Weapon\WeaponModuleMagazine.cs" />
+     <Compile Include="Assets\Code\Generic\GenericInteractable.cs" />
      <Compile Include="Assets\Code\Generic\SpawnUtilities.cs" />
      <Compile Include="Assets\Code\ScriptableObject\CollectableData.cs" />
      <Compile Include="Assets\Code\ScriptableObject\GenericItemData.cs" />

@@ -8,5 +8,4 @@ public class GenericItemData : ScriptableObject {
 	public Vector3 weaponGrabPosition;
 	public float weaponGrabRotation;
 	public Vector3 weaponGrabRotationAxis;
-	public Material hightLightMaterial;
 }

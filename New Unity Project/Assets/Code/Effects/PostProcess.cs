@@ -22,6 +22,7 @@ public class PostProcess : MonoBehaviour
 	public int downsample;
 	public Shader shader = null;
 	public bool updateMaterial;
+	public CameraRenderToTexture highLightTexture;
 
 	[HideInInspector]
 	public Vector3 hitPosition;
@@ -69,6 +70,8 @@ public class PostProcess : MonoBehaviour
 		material.SetFloat("_HitRadius", 0.0f);
 
 		deathEffectFinished = true;
+
+		highLightTexture.SetRendertexture();
 	}
 
 	void SetMaterial()
@@ -92,6 +95,7 @@ public class PostProcess : MonoBehaviour
 		}
 
 		material.SetFloat("_SpeedEffect", speedEffect);
+		material.SetTexture("_HighLight", highLightTexture.renderTexture);
 
 		if(pixelate)
 		{
@@ -176,7 +180,6 @@ public class PostProcess : MonoBehaviour
 
 	public IEnumerator DeathEffect()
 	{
-		Debug.Log("start");
 		deathEffectFinished = false;
 		WaitForEndOfFrame wait = new WaitForEndOfFrame();
 		float value = 0.0f;
@@ -192,7 +195,6 @@ public class PostProcess : MonoBehaviour
 
 		material.SetFloat("_Death", 1.0f);
 		deathEffectFinished = true;
-		Debug.Log("end");
 	}
 
 	public IEnumerator RespawnEffect()

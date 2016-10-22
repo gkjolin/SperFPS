@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour {
 	public Player[] players;
 	public Transform itemGroup;
 	public Transform mobsGroup;
+	public Material highLightMaterial_01;
+	public Camera highLightCamera;
 
 	public enum ProjectileType
 	{

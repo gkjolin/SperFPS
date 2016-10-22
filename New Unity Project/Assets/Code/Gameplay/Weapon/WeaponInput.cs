@@ -81,12 +81,17 @@ public class WeaponInput : MonoBehaviour {
 
 	void Grab()
 	{
-		currentGenericItem = grabZone.grabableItem;
+		currentGenericItem = grabZone.grabableItem.GetComponent<GenericItem>();
 		if(currentGenericItem && currentGenericItem.inHand == false)
 		{
 			grabZone.RemoveFromLists(currentGenericItem);
 			SetCurrentGenericItem();
 		}
+	}
+
+	void Interract()
+	{
+		
 	}
 
 	public void Drop()

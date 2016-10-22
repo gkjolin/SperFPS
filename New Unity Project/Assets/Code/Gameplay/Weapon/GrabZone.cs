@@ -5,10 +5,10 @@ using System.Collections.Generic;
 public class GrabZone : MonoBehaviour {
 
 	public Transform playerHead;
-	public GenericItem grabableItem;
+	public GenericInteractable grabableItem;
 
 	private List<Collider> colliders = new List<Collider>();
-	private List<GenericItem> genericItems = new List<GenericItem>();
+	private List<GenericInteractable> genericInteractables = new List<GenericInteractable>();
 	private float radius;
 
 	void Awake()
@@ -22,10 +22,10 @@ public class GrabZone : MonoBehaviour {
 		{
 			colliders.Add(c);
 
-			GenericItem gi = c.GetComponentInParent<GenericItem>();
-			if(gi && !genericItems.Contains(gi))
+			GenericInteractable gi = c.GetComponentInParent<GenericInteractable>();
+			if(gi && !genericInteractables.Contains(gi))
 			{
-				genericItems.Add(gi);
+				genericInteractables.Add(gi);
 			}
 		}
 	}
@@ -36,12 +36,12 @@ public class GrabZone : MonoBehaviour {
 		{
 			colliders.Remove(c);
 
-			GenericItem gi = c.GetComponentInParent<GenericItem>();
+			GenericInteractable gi = c.GetComponentInParent<GenericInteractable>();
 
-			if(gi && genericItems.Contains(gi))
+			if(gi && genericInteractables.Contains(gi))
 			{
 				gi.highLightSystem.hightLight = false;
-				genericItems.Remove(gi);
+				genericInteractables.Remove(gi);
 				if(grabableItem == gi)
 				{
 					grabableItem = null;
@@ -50,15 +50,15 @@ public class GrabZone : MonoBehaviour {
 		}
 	}
 
-	public void RemoveFromLists(GenericItem gi)
+	public void RemoveFromLists(GenericInteractable gi)
 	{
 		if(colliders.Contains(gi.grabCollider))
 		{
 			colliders.Remove(gi.grabCollider);
 		}
-		if(genericItems.Contains(gi))
+		if(genericInteractables.Contains(gi))
 		{
-			genericItems.Remove(gi);
+			genericInteractables.Remove(gi);
 		}
 		if(grabableItem == gi)
 		{
@@ -76,18 +76,21 @@ public class GrabZone : MonoBehaviour {
 		float minDist = float.PositiveInfinity;
 		Ray ray = new Ray(playerHead.position, playerHead.forward*radius*2.0f);
 
-		for(int i = 0; i < genericItems.Count; i++)
+		for(int i = 0; i < genericInteractables.Count; i++)
 		{
-			genericItems[i].highLightSystem.hightLight = false;
-			Vector3 d2p = genericItems[i].transform.position - playerHead.position;
+			genericInteractables[i].highLightSystem.hightLight = false;
+			Vector3 d2p = genericInteractables[i].transform.position - playerHead.position;
 			float d = Vector3.Cross(ray.direction, d2p).sqrMagnitude*d2p.sqrMagnitude;
 			if(d < minDist)
 			{
 				minDist =  d;
-				grabableItem = genericItems[i];
+				grabableItem = genericInteractables[i];
 			}
 		}
 
-		grabableItem.highLightSystem.hightLight = true;
+		if(grabableItem)
+		{
+			grabableItem.highLightSystem.hightLight = true;
+		}
 	}
 }

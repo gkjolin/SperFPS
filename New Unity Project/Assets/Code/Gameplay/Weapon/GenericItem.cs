@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GenericItem : MonoBehaviour {
+public class GenericItem : GenericInteractable {
 
 	public GenericItemData genericItemData;
 
@@ -18,11 +18,7 @@ public class GenericItem : MonoBehaviour {
 	[HideInInspector]
 	public bool rightHand;
 	[HideInInspector]
-	public Collider grabCollider;
-	[HideInInspector]
 	public Transform parent;
-	[HideInInspector]
-	public HighLightSystem highLightSystem;
 
 	protected Transform trsf;
 
@@ -37,7 +33,7 @@ public class GenericItem : MonoBehaviour {
 		colls = GetComponentsInChildren<Collider>();
 		highLightSystem = GetComponent<HighLightSystem>();
 		highLightSystem.SetUp();
-		highLightSystem.material = genericItemData.hightLightMaterial;
+		highLightSystem.material = GameManager.instance.highLightMaterial_01;
 
 		inHand = false;
 

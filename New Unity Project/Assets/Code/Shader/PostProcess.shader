@@ -4,6 +4,7 @@
 	{
 		_MainTex("", 2D) = "" {}
 		_Noise("Noise", 2D) = "" {}
+		_HighLight("HighLight", 2D) = "" {}
 		_VignetSize ("VignetSize", Float) = 1.0
 		_VignetColor ("VignetColor", Color) = (0.0,0.0,0.0,1.0)
 		_HitColor ("Hit Color", Color) = (1.0,0.0,0.0,1.0)
@@ -27,6 +28,7 @@
 
 			sampler2D _MainTex;
 			sampler2D _Noise;
+			sampler2D _HighLight;
 
 			half _VignetSize;
 			fixed4 _VignetColor;
@@ -69,6 +71,7 @@
 
 			fixed4 frag (v2f i) : SV_Target
 			{
+				fixed4 highLight = tex2D(_HighLight, i.uv);
 				fixed hit = max(0.0, sin(saturate(smoothstep(_HitRadius*0.5, _HitRadius, length(normalize(i.interpolatedRay) - _HitDirection)))*3.14159265359))*_HitColor.a;
 				fixed4 noise = (tex2D(_Noise, i.uv*_NoiseParams.xy + floor(_Time.y*_NoiseParams.z)*_NoiseParams.w) - fixed4(0.5,0.5,0.5,0.5));
 
@@ -85,7 +88,7 @@
 				fixed4 hitEffect = (hit*0.5+v)*_HitColor*_HitColor.a;
 				fixed4 speedEffect = v*_SpeedColor*_SpeedEffect;
 
-				return col + hitEffect + speedEffect;
+				return col + hitEffect + speedEffect + highLight;
 			}
 			ENDCG
 		}
