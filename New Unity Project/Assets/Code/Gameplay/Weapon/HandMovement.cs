@@ -12,10 +12,14 @@ public class HandMovement : MonoBehaviour {
 	public float inSpeed;
 	public float outSpeed;
 
+	[HideInInspector]
+	public bool playStepSound = false;
+
 	private Transform trsf;
 	private Vector3 initialPosition;
 	private bool movingBecomeTrue = false;
 	private Vector3 timer;
+	private bool canPlayStepSound = false;
 
 	void Awake () {
 		trsf = transform;
@@ -37,8 +41,21 @@ public class HandMovement : MonoBehaviour {
 
 		if(playerMove.moving == true)
 		{
-			timer += Time.deltaTime*positionSpeed;
-			Vector3 anm = initialPosition + new Vector3(Mathf.Sin(timer.x)*positionAmplitude.x, Mathf.Sin(timer.y)*positionAmplitude.y, Mathf.Sin(timer.z)*positionAmplitude.z);
+			timer += Time.deltaTime*positionSpeed*playerMove.actualSpeed;
+			Vector3 sinus = new Vector3(Mathf.Sin(timer.x), Mathf.Sin(timer.y), Mathf.Sin(timer.z));
+
+			if(sinus.y > 0.9f && canPlayStepSound == true)
+			{
+				playStepSound = true;
+				canPlayStepSound = false;
+			}
+
+			if(sinus.y < 0.0f)
+			{
+				canPlayStepSound = true;
+			}
+
+			Vector3 anm = initialPosition + new Vector3(sinus.x*positionAmplitude.x, sinus.y*positionAmplitude.y, sinus.z*positionAmplitude.z);
 			trsf.localPosition = Vector3.Lerp(trsf.localPosition, anm, Mathf.Clamp01(inSpeed*Time.deltaTime));
 		}
 		else

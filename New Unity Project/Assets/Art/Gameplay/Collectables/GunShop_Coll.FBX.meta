@@ -9,24 +9,84 @@ ModelImporter:
     100002: GunShop_Coll2
     100004: GunShop_Coll3
     100006: GunShop_Coll4
+    100008: GunShop_Coll_00_Box
+    100010: GunShop_Coll_01_Mesh
+    100012: GunShop_Coll_02_Mesh
+    100014: GunShop_Coll_03_Mesh
+    100016: GunShop_Coll_04_Box
+    100018: GunShop_Coll_05_Mesh
+    100020: GunShop_Coll_06_Box
+    100022: GunShop_Coll_07_Box
+    100024: GunShop_Coll_08_Box
+    100026: GunShop_Coll_09_Box
     400000: //RootNode
     400002: GunShop_Coll2
     400004: GunShop_Coll3
     400006: GunShop_Coll4
+    400008: GunShop_Coll_00_Box
+    400010: GunShop_Coll_01_Mesh
+    400012: GunShop_Coll_02_Mesh
+    400014: GunShop_Coll_03_Mesh
+    400016: GunShop_Coll_04_Box
+    400018: GunShop_Coll_05_Mesh
+    400020: GunShop_Coll_06_Box
+    400022: GunShop_Coll_07_Box
+    400024: GunShop_Coll_08_Box
+    400026: GunShop_Coll_09_Box
     2300000: //RootNode
     2300002: GunShop_Coll2
     2300004: GunShop_Coll3
     2300006: GunShop_Coll4
+    2300008: GunShop_Coll_00_Box
+    2300010: GunShop_Coll_01_Mesh
+    2300012: GunShop_Coll_02_Mesh
+    2300014: GunShop_Coll_03_Mesh
+    2300016: GunShop_Coll_04_Box
+    2300018: GunShop_Coll_05_Mesh
+    2300020: GunShop_Coll_06_Box
+    2300022: GunShop_Coll_07_Box
+    2300024: GunShop_Coll_08_Box
+    2300026: GunShop_Coll_09_Box
     3300000: //RootNode
     3300002: GunShop_Coll2
     3300004: GunShop_Coll3
     3300006: GunShop_Coll4
+    3300008: GunShop_Coll_00_Box
+    3300010: GunShop_Coll_01_Mesh
+    3300012: GunShop_Coll_02_Mesh
+    3300014: GunShop_Coll_03_Mesh
+    3300016: GunShop_Coll_04_Box
+    3300018: GunShop_Coll_05_Mesh
+    3300020: GunShop_Coll_06_Box
+    3300022: GunShop_Coll_07_Box
+    3300024: GunShop_Coll_08_Box
+    3300026: GunShop_Coll_09_Box
     4300000: GunShop_Coll
     4300002: GunShop_Coll2
     4300004: GunShop_Coll4
     4300006: GunShop_Coll3
+    4300008: GunShop_Coll_00_Box
+    4300010: GunShop_Coll_01_Mesh
+    4300012: GunShop_Coll_02_Mesh
+    4300014: GunShop_Coll_03_Mesh
+    4300016: GunShop_Coll_04_Box
+    4300018: GunShop_Coll_05_Mesh
+    4300020: GunShop_Coll_06_Box
+    4300022: GunShop_Coll_07_Box
+    4300024: GunShop_Coll_08_Box
+    4300026: GunShop_Coll_09_Box
+    6400000: GunShop_Coll_01_Mesh
+    6400002: GunShop_Coll_02_Mesh
+    6400004: GunShop_Coll_03_Mesh
+    6400006: GunShop_Coll_05_Mesh
+    6500000: GunShop_Coll_00_Box
+    6500002: GunShop_Coll_04_Box
+    6500004: GunShop_Coll_06_Box
+    6500006: GunShop_Coll_07_Box
+    6500008: GunShop_Coll_08_Box
+    6500010: GunShop_Coll_09_Box
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:

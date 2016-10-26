@@ -13,11 +13,13 @@ public class PlayerSound : MonoBehaviour {
 	public Rigidbody rgdBody;
 	public PlayerMove playerMove;
 	public Player player;
+	public HandMovement handMovementLeft;
+	public HandMovement handMovementRight;
 	public float movingSoundVolume;
 	public float movingSoundPitch;
-	public float stepFrequency;
+	//public float stepFrequency;
 
-	private bool playingStepSound = false;
+	//private bool playingStepSound = false;
 	private bool playingJumpSound = false;
 	private bool playingLandSound = false;
 	private bool switchStep;
@@ -41,13 +43,27 @@ public class PlayerSound : MonoBehaviour {
 			collectableSoundRandomizers[i] = collectableSounds[i].GetComponent<SoundRandomizer>();
 		}
 
-		stepFrequency *= Mathf.PI;
+		//stepFrequency *= Mathf.PI;
 	}
 
 	void Update () {
-		if(playerMove.moving == true && playingStepSound == false)
+//		if(playerMove.moving == true && playingStepSound == false)
+//		{
+//			
+//		}
+
+		if(handMovementLeft.playStepSound == true)
 		{
-			StartCoroutine(stepSoundCoroutine());
+			handMovementLeft.playStepSound = false;
+			leftStepSoundRandomizer.Randomize();
+			leftStepSound.Play();
+		}
+
+		if(handMovementRight.playStepSound == true)
+		{
+			handMovementRight.playStepSound = false;
+			rightStepSoundRandomizer.Randomize();
+			rightStepSound.Play();
 		}
 
 		if(playerMove.jumping == true && playingJumpSound == false)
@@ -85,25 +101,25 @@ public class PlayerSound : MonoBehaviour {
 		collectableSounds[i].Play();
 	}
 
-	IEnumerator stepSoundCoroutine()
-	{
-		playingStepSound = true;
-
-		if(switchStep == true)
-		{
-			leftStepSoundRandomizer.Randomize();
-			leftStepSound.Play();
-		}
-		else
-		{
-			rightStepSoundRandomizer.Randomize();
-			rightStepSound.Play();
-		}
-
-		switchStep = !switchStep;
-		yield return new WaitForSeconds(stepFrequency/playerMove.actualSpeed);
-		playingStepSound = false;
-	}
+//	IEnumerator stepSoundCoroutine()
+//	{
+//		playingStepSound = true;
+//
+//		if(switchStep == true)
+//		{
+//			leftStepSoundRandomizer.Randomize();
+//			leftStepSound.Play();
+//		}
+//		else
+//		{
+//			rightStepSoundRandomizer.Randomize();
+//			rightStepSound.Play();
+//		}
+//
+//		switchStep = !switchStep;
+//		yield return new WaitForSeconds(stepFrequency/playerMove.actualSpeed);
+//		playingStepSound = false;
+//	}
 
 	IEnumerator jumpSoundCoroutine()
 	{
