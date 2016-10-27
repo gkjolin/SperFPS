@@ -74,7 +74,6 @@ public class ButtonSwitch : MonoBehaviour {
 		}
 
 		onOff = b;
-		Debug.Log(onOff);
 		SetMaterial();
 
 		if(continuous)
@@ -109,7 +108,6 @@ public class ButtonSwitch : MonoBehaviour {
 		if(autoSwitchBack == true)
 		{
 			onOff = !b;
-			Debug.Log(onOff);
 			SetMaterial();
 		}
 			

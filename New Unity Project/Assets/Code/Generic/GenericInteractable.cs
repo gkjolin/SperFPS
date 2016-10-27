@@ -3,6 +3,7 @@ using System.Collections;
 
 public class GenericInteractable : MonoBehaviour {
 
+	public bool interactable = true;
 	[HideInInspector]
 	public HighLightSystem highLightSystem;
 	[HideInInspector]

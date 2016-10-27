@@ -23,7 +23,7 @@ public class GrabZone : MonoBehaviour {
 			colliders.Add(c);
 
 			GenericInteractable gi = c.GetComponentInParent<GenericInteractable>();
-			if(gi && !genericInteractables.Contains(gi))
+			if(gi && !genericInteractables.Contains(gi) && gi.interactable == true)
 			{
 				genericInteractables.Add(gi);
 			}
@@ -72,7 +72,7 @@ public class GrabZone : MonoBehaviour {
 		genericInteractables.Add(gi);
 	}
 
-	void OnTriggerStay()
+	void OnTriggerStay(Collider c)
 	{
 		TestDistanceToPlayer();
 	}
@@ -85,12 +85,15 @@ public class GrabZone : MonoBehaviour {
 		for(int i = 0; i < genericInteractables.Count; i++)
 		{
 			genericInteractables[i].highLightSystem.hightLight = false;
-			Vector3 d2p = genericInteractables[i].transform.position - playerHead.position;
-			float d = Vector3.Cross(ray.direction, d2p).sqrMagnitude*d2p.sqrMagnitude;
-			if(d < minDist)
+			if(genericInteractables[i].interactable == true)
 			{
-				minDist =  d;
-				grabableItem = genericInteractables[i];
+				Vector3 d2p = genericInteractables[i].transform.position - playerHead.position;
+				float d = Vector3.Cross(ray.direction, d2p).sqrMagnitude*d2p.sqrMagnitude;
+				if(d < minDist)
+				{
+					minDist =  d;
+					grabableItem = genericInteractables[i];
+				}
 			}
 		}
 

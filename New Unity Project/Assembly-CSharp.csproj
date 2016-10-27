@@ -56,6 +56,7 @@
      <Compile Include="Assets\Code\Effects\PostProcess.cs" />
      <Compile Include="Assets\Code\Gameplay\Collectables\Collectable.cs" />
      <Compile Include="Assets\Code\Gameplay\Collectables\CollectableGenerator.cs" />
+     <Compile Include="Assets\Code\Gameplay\Collectables\GunShop.cs" />
      <Compile Include="Assets\Code\Gameplay\Managers\GameManager.cs" />
      <Compile Include="Assets\Code\Gameplay\Mecanism\ButtonSwitch.cs" />
      <Compile Include="Assets\Code\Gameplay\Mecanism\InteractableInput.cs" />

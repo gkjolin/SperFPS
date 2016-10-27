@@ -22,15 +22,6 @@ public class WeaponGenerator : MonoBehaviour {
 	void Awake()
 	{
 		trsf = transform;
-		GenerateWeapon();
-	}
-
-	void Update()
-	{
-		if(Input.GetKeyDown(KeyCode.N))
-		{
-			GenerateWeapon();
-		}
 	}
 
 	public void GenerateWeapon()

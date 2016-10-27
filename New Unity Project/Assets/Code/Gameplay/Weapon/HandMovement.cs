@@ -12,6 +12,9 @@ public class HandMovement : MonoBehaviour {
 	public float inSpeed;
 	public float outSpeed;
 
+	public bool stepSound;
+	public float stepSoundFrequency;
+
 	[HideInInspector]
 	public bool playStepSound = false;
 
@@ -19,6 +22,7 @@ public class HandMovement : MonoBehaviour {
 	private Vector3 initialPosition;
 	private bool movingBecomeTrue = false;
 	private Vector3 timer;
+	private float timerStep;
 	private bool canPlayStepSound = false;
 
 	void Awake () {
@@ -28,31 +32,34 @@ public class HandMovement : MonoBehaviour {
 	}
 
 	void Update () {
-
 		if(playerMove.moving == true && movingBecomeTrue == false)
 		{
-			timer = positionPhase;
+			timer = positionPhase;//new Vector3(positionPhase.x*positionSpeed.x, positionPhase.y*positionSpeed.y, positionPhase.z*positionSpeed.z);
+			timerStep = positionPhase.y;
 			movingBecomeTrue = true;
 		}
 		else if(playerMove.moving == false && movingBecomeTrue == true)
 		{
 			movingBecomeTrue = false;
 		}
-
 		if(playerMove.moving == true)
 		{
 			timer += Time.deltaTime*positionSpeed*playerMove.actualSpeed;
 			Vector3 sinus = new Vector3(Mathf.Sin(timer.x), Mathf.Sin(timer.y), Mathf.Sin(timer.z));
 
-			if(sinus.y > 0.9f && canPlayStepSound == true)
+			if(stepSound)
 			{
-				playStepSound = true;
-				canPlayStepSound = false;
-			}
-
-			if(sinus.y < 0.0f)
-			{
-				canPlayStepSound = true;
+				timerStep += Time.deltaTime*playerMove.actualSpeed*stepSoundFrequency;
+				float sinusStep = Mathf.Sin(timerStep);
+				if(sinusStep > 0.9f && canPlayStepSound == true)
+				{
+					playStepSound = true;
+					canPlayStepSound = false;
+				}
+				if(sinusStep < 0.0f && canPlayStepSound == false)
+				{
+					canPlayStepSound = true;
+				}
 			}
 
 			Vector3 anm = initialPosition + new Vector3(sinus.x*positionAmplitude.x, sinus.y*positionAmplitude.y, sinus.z*positionAmplitude.z);
