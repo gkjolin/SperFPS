@@ -18,7 +18,7 @@ public class ColliderProcessor : AssetPostprocessor {
 		if(assetPath.Contains("_Coll"))
 		{
 			Renderer[] rdrs = go.GetComponentsInChildren<Renderer>();
-			Debug.Log(rdrs.Length);
+
 			for(int i = 0; i < rdrs.Length; i++)
 			{
 				MeshFilter mf = rdrs[i].gameObject.GetComponent<MeshFilter>();
@@ -35,7 +35,25 @@ public class ColliderProcessor : AssetPostprocessor {
 					UnityEngine.Object.DestroyImmediate(mf);
 				}
 			}
+		}
 
+		if(assetPath.Contains("_LD"))
+		{
+			Renderer[] rdrs = go.GetComponentsInChildren<Renderer>();
+
+			for(int i = 0; i < rdrs.Length; i++)
+			{
+				if(rdrs[i].gameObject.name.Contains("_Box"))
+				{
+					rdrs[i].gameObject.AddComponent<BoxCollider>();
+				
+				}
+				else if(rdrs[i].gameObject.name.Contains("_Mesh"))
+				{
+					rdrs[i].gameObject.AddComponent<MeshCollider>();
+				}
+				rdrs[i].gameObject.isStatic = true;
+			}
 		}
 	}
 }

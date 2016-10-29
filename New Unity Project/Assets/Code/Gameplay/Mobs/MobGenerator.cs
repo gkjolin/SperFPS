@@ -3,14 +3,7 @@ using System.Collections;
 
 public class MobGenerator : MonoBehaviour {
 
-	public int[] mobTypes;
-	public int mobLVLMin;
-	public int mobLVLMax;
-
 	public MobGeneratorData data;
-
-	private int mobType;
-	private int mobLVL;
 
 	private IABase iaBase;
 	private IAWeapon iaWeapon;
@@ -23,22 +16,10 @@ public class MobGenerator : MonoBehaviour {
 	void Awake()
 	{
 		trsf = transform;
-		GenerateMob();
 	}
 
-	void Update()
+	public GameObject GenerateMob(int mobType, int mobLVL)
 	{
-		if(Input.GetKeyDown(KeyCode.M))
-		{
-			GenerateMob();
-		}
-	}
-
-	public void GenerateMob()
-	{
-		mobType = mobTypes[Random.Range(0, mobTypes.Length)];
-		mobLVL = Random.Range(mobLVLMin, mobLVLMax+1);
-
 		GetModules(mobType, mobLVL);
 
 		GameObject baseObject = Instantiate(iaBase.gameObject, trsf.position, trsf.rotation) as GameObject;
@@ -60,6 +41,8 @@ public class MobGenerator : MonoBehaviour {
 
 		baseObject.name = mobName + " LVL" + mobLVL;
 		iab.level = mobLVL;
+
+		return baseObject;
 	}
 
 	void GetModules(int type, int level)
@@ -110,7 +93,6 @@ public class MobGenerator : MonoBehaviour {
 			loopcount += 1;
 		}
 
-		//Debug.Log(r[0].ToString()+r[1].ToString()+r[2].ToString()+r[3].ToString());
 		GetBase(iab, r[0]);
 		GetWeapon(iaw, r[1]);
 		GetEye(iae, r[2]);

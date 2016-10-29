@@ -1,0 +1,899 @@
+fileFormatVersion: 2
+guid: cbd1fea399c50254fba4db145faffe42
+timeCreated: 1477740053
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Ground_LD_Box_00
+    100004: Ground_LD_Box_01
+    100006: Ground_LD_Box_04
+    100008: Ground_LD_Box_05
+    100010: Ground_LD_Box_08
+    100012: Ground_LD_Box_09
+    100014: Ground_LD_Box_11
+    100016: Ground_LD_Box_13
+    100018: Ground_LD_Box_14
+    100020: Ground_LD_Box_19
+    100022: Ground_LD_Box_20
+    100024: Ground_LD_Box_21
+    100026: Ground_LD_Box_23
+    100028: Ground_LD_Box_24
+    100030: Ground_LD_Mesh_02
+    100032: Ground_LD_Mesh_06
+    100034: Ground_LD_Mesh_07
+    100036: Ground_LD_Mesh_10
+    100038: Ground_LD_Mesh_12
+    100040: Ground_LD_Mesh_15
+    100042: Ground_LD_Mesh_16
+    100044: Ground_LD_Mesh_17
+    100046: Ground_LD_Mesh_18
+    100048: Ground_LD_Mesh_22
+    100050: Ground_LD_Mesh_25
+    100052: Grounds
+    100054: Wall_LD_Box_00
+    100056: Wall_LD_Box_01
+    100058: Wall_LD_Box_02
+    100060: Wall_LD_Box_03
+    100062: Wall_LD_Box_04
+    100064: Wall_LD_Box_05
+    100066: Wall_LD_Box_06
+    100068: Wall_LD_Box_07
+    100070: Wall_LD_Box_08
+    100072: Wall_LD_Box_09
+    100074: Wall_LD_Box_10
+    100076: Wall_LD_Box_11
+    100078: Wall_LD_Box_12
+    100080: Wall_LD_Box_13
+    100082: Wall_LD_Box_14
+    100084: Wall_LD_Box_15
+    100086: Wall_LD_Box_16
+    100088: Wall_LD_Box_17
+    100090: Wall_LD_Box_18
+    100092: Wall_LD_Box_19
+    100094: Wall_LD_Box_20
+    100096: Wall_LD_Box_21
+    100098: Wall_LD_Box_22
+    100100: Wall_LD_Box_23
+    100102: Wall_LD_Box_24
+    100104: Wall_LD_Box_25
+    100106: Wall_LD_Box_26
+    100108: Wall_LD_Box_27
+    100110: Wall_LD_Box_28
+    100112: Wall_LD_Box_29
+    100114: Wall_LD_Box_30
+    100116: Wall_LD_Box_31
+    100118: Wall_LD_Box_32
+    100120: Wall_LD_Box_33
+    100122: Wall_LD_Box_34
+    100124: Wall_LD_Box_35
+    100126: Walls
+    100128: Ground_LD_Box
+    100130: Ground_LD_Box 1
+    100132: Ground_LD_Box 10
+    100134: Ground_LD_Box 11
+    100136: Ground_LD_Box 12
+    100138: Ground_LD_Box 13
+    100140: Ground_LD_Box 2
+    100142: Ground_LD_Box 3
+    100144: Ground_LD_Box 4
+    100146: Ground_LD_Box 5
+    100148: Ground_LD_Box 6
+    100150: Ground_LD_Box 7
+    100152: Ground_LD_Box 8
+    100154: Ground_LD_Box 9
+    100156: Ground_LD_Mesh
+    100158: Ground_LD_Mesh 1
+    100160: Ground_LD_Mesh 10
+    100162: Ground_LD_Mesh 11
+    100164: Ground_LD_Mesh 2
+    100166: Ground_LD_Mesh 3
+    100168: Ground_LD_Mesh 4
+    100170: Ground_LD_Mesh 5
+    100172: Ground_LD_Mesh 6
+    100174: Ground_LD_Mesh 7
+    100176: Ground_LD_Mesh 8
+    100178: Ground_LD_Mesh 9
+    100180: Wall_LD_Box
+    100182: Wall_LD_Box 1
+    100184: Wall_LD_Box 10
+    100186: Wall_LD_Box 11
+    100188: Wall_LD_Box 12
+    100190: Wall_LD_Box 13
+    100192: Wall_LD_Box 14
+    100194: Wall_LD_Box 15
+    100196: Wall_LD_Box 16
+    100198: Wall_LD_Box 17
+    100200: Wall_LD_Box 18
+    100202: Wall_LD_Box 19
+    100204: Wall_LD_Box 2
+    100206: Wall_LD_Box 20
+    100208: Wall_LD_Box 21
+    100210: Wall_LD_Box 22
+    100212: Wall_LD_Box 23
+    100214: Wall_LD_Box 24
+    100216: Wall_LD_Box 25
+    100218: Wall_LD_Box 26
+    100220: Wall_LD_Box 27
+    100222: Wall_LD_Box 28
+    100224: Wall_LD_Box 29
+    100226: Wall_LD_Box 3
+    100228: Wall_LD_Box 30
+    100230: Wall_LD_Box 31
+    100232: Wall_LD_Box 32
+    100234: Wall_LD_Box 33
+    100236: Wall_LD_Box 34
+    100238: Wall_LD_Box 35
+    100240: Wall_LD_Box 36
+    100242: Wall_LD_Box 37
+    100244: Wall_LD_Box 38
+    100246: Wall_LD_Box 39
+    100248: Wall_LD_Box 4
+    100250: Wall_LD_Box 40
+    100252: Wall_LD_Box 41
+    100254: Wall_LD_Box 42
+    100256: Wall_LD_Box 43
+    100258: Wall_LD_Box 44
+    100260: Wall_LD_Box 45
+    100262: Wall_LD_Box 46
+    100264: Wall_LD_Box 47
+    100266: Wall_LD_Box 48
+    100268: Wall_LD_Box 49
+    100270: Wall_LD_Box 5
+    100272: Wall_LD_Box 6
+    100274: Wall_LD_Box 7
+    100276: Wall_LD_Box 8
+    100278: Wall_LD_Box 9
+    400000: //RootNode
+    400002: Ground_LD_Box_00
+    400004: Ground_LD_Box_01
+    400006: Ground_LD_Box_04
+    400008: Ground_LD_Box_05
+    400010: Ground_LD_Box_08
+    400012: Ground_LD_Box_09
+    400014: Ground_LD_Box_11
+    400016: Ground_LD_Box_13
+    400018: Ground_LD_Box_14
+    400020: Ground_LD_Box_19
+    400022: Ground_LD_Box_20
+    400024: Ground_LD_Box_21
+    400026: Ground_LD_Box_23
+    400028: Ground_LD_Box_24
+    400030: Ground_LD_Mesh_02
+    400032: Ground_LD_Mesh_06
+    400034: Ground_LD_Mesh_07
+    400036: Ground_LD_Mesh_10
+    400038: Ground_LD_Mesh_12
+    400040: Ground_LD_Mesh_15
+    400042: Ground_LD_Mesh_16
+    400044: Ground_LD_Mesh_17
+    400046: Ground_LD_Mesh_18
+    400048: Ground_LD_Mesh_22
+    400050: Ground_LD_Mesh_25
+    400052: Grounds
+    400054: Wall_LD_Box_00
+    400056: Wall_LD_Box_01
+    400058: Wall_LD_Box_02
+    400060: Wall_LD_Box_03
+    400062: Wall_LD_Box_04
+    400064: Wall_LD_Box_05
+    400066: Wall_LD_Box_06
+    400068: Wall_LD_Box_07
+    400070: Wall_LD_Box_08
+    400072: Wall_LD_Box_09
+    400074: Wall_LD_Box_10
+    400076: Wall_LD_Box_11
+    400078: Wall_LD_Box_12
+    400080: Wall_LD_Box_13
+    400082: Wall_LD_Box_14
+    400084: Wall_LD_Box_15
+    400086: Wall_LD_Box_16
+    400088: Wall_LD_Box_17
+    400090: Wall_LD_Box_18
+    400092: Wall_LD_Box_19
+    400094: Wall_LD_Box_20
+    400096: Wall_LD_Box_21
+    400098: Wall_LD_Box_22
+    400100: Wall_LD_Box_23
+    400102: Wall_LD_Box_24
+    400104: Wall_LD_Box_25
+    400106: Wall_LD_Box_26
+    400108: Wall_LD_Box_27
+    400110: Wall_LD_Box_28
+    400112: Wall_LD_Box_29
+    400114: Wall_LD_Box_30
+    400116: Wall_LD_Box_31
+    400118: Wall_LD_Box_32
+    400120: Wall_LD_Box_33
+    400122: Wall_LD_Box_34
+    400124: Wall_LD_Box_35
+    400126: Walls
+    400128: Ground_LD_Box
+    400130: Ground_LD_Box 1
+    400132: Ground_LD_Box 10
+    400134: Ground_LD_Box 11
+    400136: Ground_LD_Box 12
+    400138: Ground_LD_Box 13
+    400140: Ground_LD_Box 2
+    400142: Ground_LD_Box 3
+    400144: Ground_LD_Box 4
+    400146: Ground_LD_Box 5
+    400148: Ground_LD_Box 6
+    400150: Ground_LD_Box 7
+    400152: Ground_LD_Box 8
+    400154: Ground_LD_Box 9
+    400156: Ground_LD_Mesh
+    400158: Ground_LD_Mesh 1
+    400160: Ground_LD_Mesh 10
+    400162: Ground_LD_Mesh 11
+    400164: Ground_LD_Mesh 2
+    400166: Ground_LD_Mesh 3
+    400168: Ground_LD_Mesh 4
+    400170: Ground_LD_Mesh 5
+    400172: Ground_LD_Mesh 6
+    400174: Ground_LD_Mesh 7
+    400176: Ground_LD_Mesh 8
+    400178: Ground_LD_Mesh 9
+    400180: Wall_LD_Box
+    400182: Wall_LD_Box 1
+    400184: Wall_LD_Box 10
+    400186: Wall_LD_Box 11
+    400188: Wall_LD_Box 12
+    400190: Wall_LD_Box 13
+    400192: Wall_LD_Box 14
+    400194: Wall_LD_Box 15
+    400196: Wall_LD_Box 16
+    400198: Wall_LD_Box 17
+    400200: Wall_LD_Box 18
+    400202: Wall_LD_Box 19
+    400204: Wall_LD_Box 2
+    400206: Wall_LD_Box 20
+    400208: Wall_LD_Box 21
+    400210: Wall_LD_Box 22
+    400212: Wall_LD_Box 23
+    400214: Wall_LD_Box 24
+    400216: Wall_LD_Box 25
+    400218: Wall_LD_Box 26
+    400220: Wall_LD_Box 27
+    400222: Wall_LD_Box 28
+    400224: Wall_LD_Box 29
+    400226: Wall_LD_Box 3
+    400228: Wall_LD_Box 30
+    400230: Wall_LD_Box 31
+    400232: Wall_LD_Box 32
+    400234: Wall_LD_Box 33
+    400236: Wall_LD_Box 34
+    400238: Wall_LD_Box 35
+    400240: Wall_LD_Box 36
+    400242: Wall_LD_Box 37
+    400244: Wall_LD_Box 38
+    400246: Wall_LD_Box 39
+    400248: Wall_LD_Box 4
+    400250: Wall_LD_Box 40
+    400252: Wall_LD_Box 41
+    400254: Wall_LD_Box 42
+    400256: Wall_LD_Box 43
+    400258: Wall_LD_Box 44
+    400260: Wall_LD_Box 45
+    400262: Wall_LD_Box 46
+    400264: Wall_LD_Box 47
+    400266: Wall_LD_Box 48
+    400268: Wall_LD_Box 49
+    400270: Wall_LD_Box 5
+    400272: Wall_LD_Box 6
+    400274: Wall_LD_Box 7
+    400276: Wall_LD_Box 8
+    400278: Wall_LD_Box 9
+    2300000: Ground_LD_Box_00
+    2300002: Ground_LD_Box_01
+    2300004: Ground_LD_Box_04
+    2300006: Ground_LD_Box_05
+    2300008: Ground_LD_Box_08
+    2300010: Ground_LD_Box_09
+    2300012: Ground_LD_Box_11
+    2300014: Ground_LD_Box_13
+    2300016: Ground_LD_Box_14
+    2300018: Ground_LD_Box_19
+    2300020: Ground_LD_Box_20
+    2300022: Ground_LD_Box_21
+    2300024: Ground_LD_Box_23
+    2300026: Ground_LD_Box_24
+    2300028: Ground_LD_Mesh_02
+    2300030: Ground_LD_Mesh_06
+    2300032: Ground_LD_Mesh_07
+    2300034: Ground_LD_Mesh_10
+    2300036: Ground_LD_Mesh_12
+    2300038: Ground_LD_Mesh_15
+    2300040: Ground_LD_Mesh_16
+    2300042: Ground_LD_Mesh_17
+    2300044: Ground_LD_Mesh_18
+    2300046: Ground_LD_Mesh_22
+    2300048: Ground_LD_Mesh_25
+    2300050: Wall_LD_Box_00
+    2300052: Wall_LD_Box_01
+    2300054: Wall_LD_Box_02
+    2300056: Wall_LD_Box_03
+    2300058: Wall_LD_Box_04
+    2300060: Wall_LD_Box_05
+    2300062: Wall_LD_Box_06
+    2300064: Wall_LD_Box_07
+    2300066: Wall_LD_Box_08
+    2300068: Wall_LD_Box_09
+    2300070: Wall_LD_Box_10
+    2300072: Wall_LD_Box_11
+    2300074: Wall_LD_Box_12
+    2300076: Wall_LD_Box_13
+    2300078: Wall_LD_Box_14
+    2300080: Wall_LD_Box_15
+    2300082: Wall_LD_Box_16
+    2300084: Wall_LD_Box_17
+    2300086: Wall_LD_Box_18
+    2300088: Wall_LD_Box_19
+    2300090: Wall_LD_Box_20
+    2300092: Wall_LD_Box_21
+    2300094: Wall_LD_Box_22
+    2300096: Wall_LD_Box_23
+    2300098: Wall_LD_Box_24
+    2300100: Wall_LD_Box_25
+    2300102: Wall_LD_Box_26
+    2300104: Wall_LD_Box_27
+    2300106: Wall_LD_Box_28
+    2300108: Wall_LD_Box_29
+    2300110: Wall_LD_Box_30
+    2300112: Wall_LD_Box_31
+    2300114: Wall_LD_Box_32
+    2300116: Wall_LD_Box_33
+    2300118: Wall_LD_Box_34
+    2300120: Wall_LD_Box_35
+    2300122: Ground_LD_Box
+    2300124: Ground_LD_Box 1
+    2300126: Ground_LD_Box 10
+    2300128: Ground_LD_Box 11
+    2300130: Ground_LD_Box 12
+    2300132: Ground_LD_Box 13
+    2300134: Ground_LD_Box 2
+    2300136: Ground_LD_Box 3
+    2300138: Ground_LD_Box 4
+    2300140: Ground_LD_Box 5
+    2300142: Ground_LD_Box 6
+    2300144: Ground_LD_Box 7
+    2300146: Ground_LD_Box 8
+    2300148: Ground_LD_Box 9
+    2300150: Ground_LD_Mesh
+    2300152: Ground_LD_Mesh 1
+    2300154: Ground_LD_Mesh 10
+    2300156: Ground_LD_Mesh 11
+    2300158: Ground_LD_Mesh 2
+    2300160: Ground_LD_Mesh 3
+    2300162: Ground_LD_Mesh 4
+    2300164: Ground_LD_Mesh 5
+    2300166: Ground_LD_Mesh 6
+    2300168: Ground_LD_Mesh 7
+    2300170: Ground_LD_Mesh 8
+    2300172: Ground_LD_Mesh 9
+    2300174: Wall_LD_Box
+    2300176: Wall_LD_Box 1
+    2300178: Wall_LD_Box 10
+    2300180: Wall_LD_Box 11
+    2300182: Wall_LD_Box 12
+    2300184: Wall_LD_Box 13
+    2300186: Wall_LD_Box 14
+    2300188: Wall_LD_Box 15
+    2300190: Wall_LD_Box 16
+    2300192: Wall_LD_Box 17
+    2300194: Wall_LD_Box 18
+    2300196: Wall_LD_Box 19
+    2300198: Wall_LD_Box 2
+    2300200: Wall_LD_Box 20
+    2300202: Wall_LD_Box 21
+    2300204: Wall_LD_Box 22
+    2300206: Wall_LD_Box 23
+    2300208: Wall_LD_Box 24
+    2300210: Wall_LD_Box 25
+    2300212: Wall_LD_Box 26
+    2300214: Wall_LD_Box 27
+    2300216: Wall_LD_Box 28
+    2300218: Wall_LD_Box 29
+    2300220: Wall_LD_Box 3
+    2300222: Wall_LD_Box 30
+    2300224: Wall_LD_Box 31
+    2300226: Wall_LD_Box 32
+    2300228: Wall_LD_Box 33
+    2300230: Wall_LD_Box 34
+    2300232: Wall_LD_Box 35
+    2300234: Wall_LD_Box 36
+    2300236: Wall_LD_Box 37
+    2300238: Wall_LD_Box 38
+    2300240: Wall_LD_Box 39
+    2300242: Wall_LD_Box 4
+    2300244: Wall_LD_Box 40
+    2300246: Wall_LD_Box 41
+    2300248: Wall_LD_Box 42
+    2300250: Wall_LD_Box 43
+    2300252: Wall_LD_Box 44
+    2300254: Wall_LD_Box 45
+    2300256: Wall_LD_Box 46
+    2300258: Wall_LD_Box 47
+    2300260: Wall_LD_Box 48
+    2300262: Wall_LD_Box 49
+    2300264: Wall_LD_Box 5
+    2300266: Wall_LD_Box 6
+    2300268: Wall_LD_Box 7
+    2300270: Wall_LD_Box 8
+    2300272: Wall_LD_Box 9
+    3300000: Ground_LD_Box_00
+    3300002: Ground_LD_Box_01
+    3300004: Ground_LD_Box_04
+    3300006: Ground_LD_Box_05
+    3300008: Ground_LD_Box_08
+    3300010: Ground_LD_Box_09
+    3300012: Ground_LD_Box_11
+    3300014: Ground_LD_Box_13
+    3300016: Ground_LD_Box_14
+    3300018: Ground_LD_Box_19
+    3300020: Ground_LD_Box_20
+    3300022: Ground_LD_Box_21
+    3300024: Ground_LD_Box_23
+    3300026: Ground_LD_Box_24
+    3300028: Ground_LD_Mesh_02
+    3300030: Ground_LD_Mesh_06
+    3300032: Ground_LD_Mesh_07
+    3300034: Ground_LD_Mesh_10
+    3300036: Ground_LD_Mesh_12
+    3300038: Ground_LD_Mesh_15
+    3300040: Ground_LD_Mesh_16
+    3300042: Ground_LD_Mesh_17
+    3300044: Ground_LD_Mesh_18
+    3300046: Ground_LD_Mesh_22
+    3300048: Ground_LD_Mesh_25
+    3300050: Wall_LD_Box_00
+    3300052: Wall_LD_Box_01
+    3300054: Wall_LD_Box_02
+    3300056: Wall_LD_Box_03
+    3300058: Wall_LD_Box_04
+    3300060: Wall_LD_Box_05
+    3300062: Wall_LD_Box_06
+    3300064: Wall_LD_Box_07
+    3300066: Wall_LD_Box_08
+    3300068: Wall_LD_Box_09
+    3300070: Wall_LD_Box_10
+    3300072: Wall_LD_Box_11
+    3300074: Wall_LD_Box_12
+    3300076: Wall_LD_Box_13
+    3300078: Wall_LD_Box_14
+    3300080: Wall_LD_Box_15
+    3300082: Wall_LD_Box_16
+    3300084: Wall_LD_Box_17
+    3300086: Wall_LD_Box_18
+    3300088: Wall_LD_Box_19
+    3300090: Wall_LD_Box_20
+    3300092: Wall_LD_Box_21
+    3300094: Wall_LD_Box_22
+    3300096: Wall_LD_Box_23
+    3300098: Wall_LD_Box_24
+    3300100: Wall_LD_Box_25
+    3300102: Wall_LD_Box_26
+    3300104: Wall_LD_Box_27
+    3300106: Wall_LD_Box_28
+    3300108: Wall_LD_Box_29
+    3300110: Wall_LD_Box_30
+    3300112: Wall_LD_Box_31
+    3300114: Wall_LD_Box_32
+    3300116: Wall_LD_Box_33
+    3300118: Wall_LD_Box_34
+    3300120: Wall_LD_Box_35
+    3300122: Ground_LD_Box
+    3300124: Ground_LD_Box 1
+    3300126: Ground_LD_Box 10
+    3300128: Ground_LD_Box 11
+    3300130: Ground_LD_Box 12
+    3300132: Ground_LD_Box 13
+    3300134: Ground_LD_Box 2
+    3300136: Ground_LD_Box 3
+    3300138: Ground_LD_Box 4
+    3300140: Ground_LD_Box 5
+    3300142: Ground_LD_Box 6
+    3300144: Ground_LD_Box 7
+    3300146: Ground_LD_Box 8
+    3300148: Ground_LD_Box 9
+    3300150: Ground_LD_Mesh
+    3300152: Ground_LD_Mesh 1
+    3300154: Ground_LD_Mesh 10
+    3300156: Ground_LD_Mesh 11
+    3300158: Ground_LD_Mesh 2
+    3300160: Ground_LD_Mesh 3
+    3300162: Ground_LD_Mesh 4
+    3300164: Ground_LD_Mesh 5
+    3300166: Ground_LD_Mesh 6
+    3300168: Ground_LD_Mesh 7
+    3300170: Ground_LD_Mesh 8
+    3300172: Ground_LD_Mesh 9
+    3300174: Wall_LD_Box
+    3300176: Wall_LD_Box 1
+    3300178: Wall_LD_Box 10
+    3300180: Wall_LD_Box 11
+    3300182: Wall_LD_Box 12
+    3300184: Wall_LD_Box 13
+    3300186: Wall_LD_Box 14
+    3300188: Wall_LD_Box 15
+    3300190: Wall_LD_Box 16
+    3300192: Wall_LD_Box 17
+    3300194: Wall_LD_Box 18
+    3300196: Wall_LD_Box 19
+    3300198: Wall_LD_Box 2
+    3300200: Wall_LD_Box 20
+    3300202: Wall_LD_Box 21
+    3300204: Wall_LD_Box 22
+    3300206: Wall_LD_Box 23
+    3300208: Wall_LD_Box 24
+    3300210: Wall_LD_Box 25
+    3300212: Wall_LD_Box 26
+    3300214: Wall_LD_Box 27
+    3300216: Wall_LD_Box 28
+    3300218: Wall_LD_Box 29
+    3300220: Wall_LD_Box 3
+    3300222: Wall_LD_Box 30
+    3300224: Wall_LD_Box 31
+    3300226: Wall_LD_Box 32
+    3300228: Wall_LD_Box 33
+    3300230: Wall_LD_Box 34
+    3300232: Wall_LD_Box 35
+    3300234: Wall_LD_Box 36
+    3300236: Wall_LD_Box 37
+    3300238: Wall_LD_Box 38
+    3300240: Wall_LD_Box 39
+    3300242: Wall_LD_Box 4
+    3300244: Wall_LD_Box 40
+    3300246: Wall_LD_Box 41
+    3300248: Wall_LD_Box 42
+    3300250: Wall_LD_Box 43
+    3300252: Wall_LD_Box 44
+    3300254: Wall_LD_Box 45
+    3300256: Wall_LD_Box 46
+    3300258: Wall_LD_Box 47
+    3300260: Wall_LD_Box 48
+    3300262: Wall_LD_Box 49
+    3300264: Wall_LD_Box 5
+    3300266: Wall_LD_Box 6
+    3300268: Wall_LD_Box 7
+    3300270: Wall_LD_Box 8
+    3300272: Wall_LD_Box 9
+    4300000: Wall_LD_Box_18
+    4300002: Wall_LD_Box_35
+    4300004: Wall_LD_Box_34
+    4300006: Wall_LD_Box_33
+    4300008: Wall_LD_Box_32
+    4300010: Wall_LD_Box_05
+    4300012: Wall_LD_Box_06
+    4300014: Wall_LD_Box_07
+    4300016: Wall_LD_Box_08
+    4300018: Wall_LD_Box_09
+    4300020: Wall_LD_Box_10
+    4300022: Wall_LD_Box_11
+    4300024: Wall_LD_Box_12
+    4300026: Wall_LD_Box_13
+    4300028: Wall_LD_Box_14
+    4300030: Wall_LD_Box_15
+    4300032: Wall_LD_Box_16
+    4300034: Wall_LD_Box_17
+    4300036: Wall_LD_Box_19
+    4300038: Wall_LD_Box_20
+    4300040: Wall_LD_Box_21
+    4300042: Wall_LD_Box_22
+    4300044: Wall_LD_Box_23
+    4300046: Wall_LD_Box_24
+    4300048: Wall_LD_Box_25
+    4300050: Wall_LD_Box_26
+    4300052: Wall_LD_Box_27
+    4300054: Wall_LD_Box_28
+    4300056: Wall_LD_Box_29
+    4300058: Wall_LD_Box_30
+    4300060: Wall_LD_Box_31
+    4300062: Wall_LD_Box_03
+    4300064: Wall_LD_Box_02
+    4300066: Wall_LD_Box_01
+    4300068: Wall_LD_Box_00
+    4300070: Wall_LD_Box_04
+    4300072: Ground_LD_Box_00
+    4300074: Ground_LD_Box_01
+    4300076: Ground_LD_Mesh_02
+    4300078: Ground_LD_Box_04
+    4300080: Ground_LD_Box_05
+    4300082: Ground_LD_Mesh_06
+    4300084: Ground_LD_Mesh_07
+    4300086: Ground_LD_Box_08
+    4300088: Ground_LD_Box_09
+    4300090: Ground_LD_Mesh_10
+    4300092: Ground_LD_Box_11
+    4300094: Ground_LD_Mesh_12
+    4300096: Ground_LD_Box_13
+    4300098: Ground_LD_Box_14
+    4300100: Ground_LD_Mesh_15
+    4300102: Ground_LD_Mesh_16
+    4300104: Ground_LD_Mesh_17
+    4300106: Ground_LD_Mesh_18
+    4300108: Ground_LD_Box_19
+    4300110: Ground_LD_Box_20
+    4300112: Ground_LD_Box_21
+    4300114: Ground_LD_Mesh_22
+    4300116: Ground_LD_Box_23
+    4300118: Ground_LD_Box_24
+    4300120: Ground_LD_Mesh_25
+    4300122: Wall_LD_Box
+    4300124: Wall_LD_Box
+    4300126: Wall_LD_Box
+    4300128: Wall_LD_Box
+    4300130: Wall_LD_Box
+    4300132: Wall_LD_Box
+    4300134: Wall_LD_Box
+    4300136: Wall_LD_Box
+    4300138: Wall_LD_Box
+    4300140: Wall_LD_Box
+    4300142: Wall_LD_Box
+    4300144: Wall_LD_Box
+    4300146: Wall_LD_Box
+    4300148: Wall_LD_Box
+    4300150: Wall_LD_Box
+    4300152: Wall_LD_Box
+    4300154: Wall_LD_Box
+    4300156: Wall_LD_Box
+    4300158: Wall_LD_Box
+    4300160: Wall_LD_Box
+    4300162: Wall_LD_Box
+    4300164: Wall_LD_Box
+    4300166: Wall_LD_Box
+    4300168: Wall_LD_Box
+    4300170: Wall_LD_Box
+    4300172: Wall_LD_Box
+    4300174: Wall_LD_Box
+    4300176: Wall_LD_Box
+    4300178: Wall_LD_Box
+    4300180: Wall_LD_Box
+    4300182: Wall_LD_Box
+    4300184: Wall_LD_Box
+    4300186: Wall_LD_Box
+    4300188: Wall_LD_Box
+    4300190: Wall_LD_Box
+    4300192: Wall_LD_Box
+    4300194: Wall_LD_Box
+    4300196: Wall_LD_Box
+    4300198: Wall_LD_Box
+    4300200: Wall_LD_Box
+    4300202: Wall_LD_Box
+    4300204: Wall_LD_Box
+    4300206: Wall_LD_Box
+    4300208: Wall_LD_Box
+    4300210: Wall_LD_Box
+    4300212: Wall_LD_Box
+    4300214: Wall_LD_Box
+    4300216: Wall_LD_Box
+    4300218: Wall_LD_Box
+    4300220: Wall_LD_Box
+    4300222: Ground_LD_Box
+    4300224: Ground_LD_Box
+    4300226: Ground_LD_Mesh
+    4300228: Ground_LD_Box
+    4300230: Ground_LD_Box
+    4300232: Ground_LD_Mesh
+    4300234: Ground_LD_Mesh
+    4300236: Ground_LD_Box
+    4300238: Ground_LD_Box
+    4300240: Ground_LD_Mesh
+    4300242: Ground_LD_Box
+    4300244: Ground_LD_Mesh
+    4300246: Ground_LD_Box
+    4300248: Ground_LD_Box
+    4300250: Ground_LD_Mesh
+    4300252: Ground_LD_Mesh
+    4300254: Ground_LD_Mesh
+    4300256: Ground_LD_Mesh
+    4300258: Ground_LD_Box
+    4300260: Ground_LD_Box
+    4300262: Ground_LD_Box
+    4300264: Ground_LD_Mesh
+    4300266: Ground_LD_Box
+    4300268: Ground_LD_Box
+    4300270: Ground_LD_Mesh
+    4300272: Ground_LD_Mesh
+    6400000: Ground_LD_Mesh_02
+    6400002: Ground_LD_Mesh_06
+    6400004: Ground_LD_Mesh_07
+    6400006: Ground_LD_Mesh_10
+    6400008: Ground_LD_Mesh_12
+    6400010: Ground_LD_Mesh_15
+    6400012: Ground_LD_Mesh_16
+    6400014: Ground_LD_Mesh_17
+    6400016: Ground_LD_Mesh_18
+    6400018: Ground_LD_Mesh_22
+    6400020: Ground_LD_Mesh_25
+    6400022: Ground_LD_Mesh
+    6400024: Ground_LD_Mesh 1
+    6400026: Ground_LD_Mesh 10
+    6400028: Ground_LD_Mesh 11
+    6400030: Ground_LD_Mesh 2
+    6400032: Ground_LD_Mesh 3
+    6400034: Ground_LD_Mesh 4
+    6400036: Ground_LD_Mesh 5
+    6400038: Ground_LD_Mesh 6
+    6400040: Ground_LD_Mesh 7
+    6400042: Ground_LD_Mesh 8
+    6400044: Ground_LD_Mesh 9
+    6500000: Ground_LD_Box_00
+    6500002: Ground_LD_Box_01
+    6500004: Ground_LD_Box_04
+    6500006: Ground_LD_Box_05
+    6500008: Ground_LD_Box_08
+    6500010: Ground_LD_Box_09
+    6500012: Ground_LD_Box_11
+    6500014: Ground_LD_Box_13
+    6500016: Ground_LD_Box_14
+    6500018: Ground_LD_Box_19
+    6500020: Ground_LD_Box_20
+    6500022: Ground_LD_Box_21
+    6500024: Ground_LD_Box_23
+    6500026: Ground_LD_Box_24
+    6500028: Wall_LD_Box_00
+    6500030: Wall_LD_Box_01
+    6500032: Wall_LD_Box_02
+    6500034: Wall_LD_Box_03
+    6500036: Wall_LD_Box_04
+    6500038: Wall_LD_Box_05
+    6500040: Wall_LD_Box_06
+    6500042: Wall_LD_Box_07
+    6500044: Wall_LD_Box_08
+    6500046: Wall_LD_Box_09
+    6500048: Wall_LD_Box_10
+    6500050: Wall_LD_Box_11
+    6500052: Wall_LD_Box_12
+    6500054: Wall_LD_Box_13
+    6500056: Wall_LD_Box_14
+    6500058: Wall_LD_Box_15
+    6500060: Wall_LD_Box_16
+    6500062: Wall_LD_Box_17
+    6500064: Wall_LD_Box_18
+    6500066: Wall_LD_Box_19
+    6500068: Wall_LD_Box_20
+    6500070: Wall_LD_Box_21
+    6500072: Wall_LD_Box_22
+    6500074: Wall_LD_Box_23
+    6500076: Wall_LD_Box_24
+    6500078: Wall_LD_Box_25
+    6500080: Wall_LD_Box_26
+    6500082: Wall_LD_Box_27
+    6500084: Wall_LD_Box_28
+    6500086: Wall_LD_Box_29
+    6500088: Wall_LD_Box_30
+    6500090: Wall_LD_Box_31
+    6500092: Wall_LD_Box_32
+    6500094: Wall_LD_Box_33
+    6500096: Wall_LD_Box_34
+    6500098: Wall_LD_Box_35
+    6500100: Ground_LD_Box
+    6500102: Ground_LD_Box 1
+    6500104: Ground_LD_Box 10
+    6500106: Ground_LD_Box 11
+    6500108: Ground_LD_Box 12
+    6500110: Ground_LD_Box 13
+    6500112: Ground_LD_Box 2
+    6500114: Ground_LD_Box 3
+    6500116: Ground_LD_Box 4
+    6500118: Ground_LD_Box 5
+    6500120: Ground_LD_Box 6
+    6500122: Ground_LD_Box 7
+    6500124: Ground_LD_Box 8
+    6500126: Ground_LD_Box 9
+    6500128: Wall_LD_Box
+    6500130: Wall_LD_Box 1
+    6500132: Wall_LD_Box 10
+    6500134: Wall_LD_Box 11
+    6500136: Wall_LD_Box 12
+    6500138: Wall_LD_Box 13
+    6500140: Wall_LD_Box 14
+    6500142: Wall_LD_Box 15
+    6500144: Wall_LD_Box 16
+    6500146: Wall_LD_Box 17
+    6500148: Wall_LD_Box 18
+    6500150: Wall_LD_Box 19
+    6500152: Wall_LD_Box 2
+    6500154: Wall_LD_Box 20
+    6500156: Wall_LD_Box 21
+    6500158: Wall_LD_Box 22
+    6500160: Wall_LD_Box 23
+    6500162: Wall_LD_Box 24
+    6500164: Wall_LD_Box 25
+    6500166: Wall_LD_Box 26
+    6500168: Wall_LD_Box 27
+    6500170: Wall_LD_Box 28
+    6500172: Wall_LD_Box 29
+    6500174: Wall_LD_Box 3
+    6500176: Wall_LD_Box 30
+    6500178: Wall_LD_Box 31
+    6500180: Wall_LD_Box 32
+    6500182: Wall_LD_Box 33
+    6500184: Wall_LD_Box 34
+    6500186: Wall_LD_Box 35
+    6500188: Wall_LD_Box 36
+    6500190: Wall_LD_Box 37
+    6500192: Wall_LD_Box 38
+    6500194: Wall_LD_Box 39
+    6500196: Wall_LD_Box 4
+    6500198: Wall_LD_Box 40
+    6500200: Wall_LD_Box 41
+    6500202: Wall_LD_Box 42
+    6500204: Wall_LD_Box 43
+    6500206: Wall_LD_Box 44
+    6500208: Wall_LD_Box 45
+    6500210: Wall_LD_Box 46
+    6500212: Wall_LD_Box 47
+    6500214: Wall_LD_Box 48
+    6500216: Wall_LD_Box 49
+    6500218: Wall_LD_Box 5
+    6500220: Wall_LD_Box 6
+    6500222: Wall_LD_Box 7
+    6500224: Wall_LD_Box 8
+    6500226: Wall_LD_Box 9
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

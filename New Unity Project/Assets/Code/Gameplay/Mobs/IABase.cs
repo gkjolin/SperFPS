@@ -428,7 +428,7 @@ public class IABase : MonoBehaviour {
 
 	void ResetVariables()
 	{
-		iaActions = IAActions.wait;
+		iaActions = IAActions.search;
 		lastKnownPosition = trsf.position;
 		goingToSearchPosition = false;
 		strafing = false;
